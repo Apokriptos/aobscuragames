@@ -1,31 +1,19 @@
-# Santiago Pérez Losanovscky — Portfolio Prototype
+# Santiago Pérez Losanovscky — Portfolio Prototype v2
 
-A no-build static HTML/CSS/JS prototype intended for GitHub Pages.
+Static HTML/CSS/JS prototype styled to more closely match the dark portfolio concept mockup.
 
-## Preview locally
-Open `index.html` in a browser, or run a tiny local web server:
+## Update your existing GitHub Pages repo
 
-```bash
-python -m http.server 8000
-```
+1. Unzip this package.
+2. Copy **all files inside this folder** into your local `santiago-portfolio` repository.
+3. Allow Windows to replace the old HTML/CSS/JS files.
+4. Keep the `assets` folder and copy its contents too.
+5. Open GitHub Desktop.
+6. Review the changed files.
+7. Commit with a message such as `Restyle portfolio to mockup direction`.
+8. Click **Push origin**.
+9. GitHub Pages will redeploy automatically.
 
-Then open `http://localhost:8000`.
+## Important
 
-## Publish on GitHub Pages
-1. Create a GitHub repository (for example `portfolio-test`).
-2. Upload every file in this folder, keeping the same structure.
-3. Commit to `main`.
-4. Open **Settings → Pages**.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Select `main` and `/ (root)`.
-7. Save. GitHub will provide the public `github.io` address after deployment.
-
-## Replace placeholders later
-- Add real screenshots/reels from Hollow Graves.
-- Replace conceptual system diagrams with the real Astral Ecosystem artifacts.
-- Add real Blueprint screenshots and the clue-authoring tool when built.
-- Replace Technical Animation placeholders with coursework/reel footage.
-- Add explicit collaborator credits to the Lab MVP page.
-- Add final CV and LinkedIn links.
-
-No frameworks, package manager, build process, or paid hosting are required.
+The image assets in this prototype are crops from the previously generated portfolio concept image. They are **visual placeholders only**. Replace them with real Hollow Graves footage, screenshots, diagrams, Unreal editor captures, animation breakdowns, and Lab MVP media as those assets become available.
