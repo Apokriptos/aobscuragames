@@ -1,19 +1,21 @@
-# Santiago Pérez Losanovscky — Portfolio Prototype v2
+# Santiago Pérez Losanovscky — Portfolio Prototype v3
 
-Static HTML/CSS/JS prototype styled to more closely match the dark portfolio concept mockup.
+This version fixes the desktop scaling/layout problems in v2 and uses a denser real-browser composition inspired by the concept mockup.
 
-## Update your existing GitHub Pages repo
+## Update the live GitHub Pages site
+1. Copy **everything inside this folder** into your local `santiago-portfolio` repository.
+2. Replace/merge existing files when Windows asks.
+3. In GitHub Desktop, review the changes.
+4. Commit (example: `Fix portfolio desktop layout`).
+5. Push origin.
+6. GitHub Pages will redeploy automatically.
 
-1. Unzip this package.
-2. Copy **all files inside this folder** into your local `santiago-portfolio` repository.
-3. Allow Windows to replace the old HTML/CSS/JS files.
-4. Keep the `assets` folder and copy its contents too.
-5. Open GitHub Desktop.
-6. Review the changed files.
-7. Commit with a message such as `Restyle portfolio to mockup direction`.
-8. Click **Push origin**.
-9. GitHub Pages will redeploy automatically.
+## What changed
+- Smaller, denser desktop scale.
+- Explicit hero image instead of pseudo-element background.
+- Desktop grid remains three columns until the browser is genuinely narrow.
+- Reduced hero height and headline size.
+- Safer `max-width` container instead of CSS `min()` sizing.
+- Compact case-study layouts and more resilient responsive grids.
 
-## Important
-
-The image assets in this prototype are crops from the previously generated portfolio concept image. They are **visual placeholders only**. Replace them with real Hollow Graves footage, screenshots, diagrams, Unreal editor captures, animation breakdowns, and Lab MVP media as those assets become available.
+All content/images remain prototype placeholders to be replaced by real portfolio evidence later.
