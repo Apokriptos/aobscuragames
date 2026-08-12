@@ -1,21 +1,17 @@
-# Santiago Pérez Losanovscky — Portfolio Prototype v3
+# Santiago Portfolio — Split Landing Test v4
 
-This version fixes the desktop scaling/layout problems in v2 and uses a denser real-browser composition inspired by the concept mockup.
+This version changes the root `index.html` into a two-way landing page:
 
-## Update the live GitHub Pages site
-1. Copy **everything inside this folder** into your local `santiago-portfolio` repository.
-2. Replace/merge existing files when Windows asks.
-3. In GitHub Desktop, review the changes.
-4. Commit (example: `Fix portfolio desktop layout`).
-5. Push origin.
-6. GitHub Pages will redeploy automatically.
+- **Videogames** → `games.html`
+- **Books** → `books.html`
 
-## What changed
-- Smaller, denser desktop scale.
-- Explicit hero image instead of pseudo-element background.
-- Desktop grid remains three columns until the browser is genuinely narrow.
-- Reduced hero height and headline size.
-- Safer `max-width` container instead of CSS `min()` sizing.
-- Compact case-study layouts and more resilient responsive grids.
+Desktop uses a diagonal split that expands and brightens on hover. Mobile switches to stacked panels.
 
-All content/images remain prototype placeholders to be replaced by real portfolio evidence later.
+## Update the existing GitHub Pages repo
+1. Copy **all files and the `assets` folder** from this package into the root of your local `santiago-portfolio` repository.
+2. Allow Windows to replace/merge existing files.
+3. In GitHub Desktop, commit the changes.
+4. Push origin.
+5. After Pages redeploys, hard-refresh with `Ctrl+F5`.
+
+`books.html` is intentionally a placeholder. `games.html` contains the previous games portfolio homepage.
