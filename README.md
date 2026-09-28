@@ -1,17 +1,7 @@
-# Santiago Portfolio — Split Landing Test v4
+# Santiago Pérez Losanovscky — Portfolio
 
-This version changes the root `index.html` into a two-way landing page:
+Static GitHub Pages portfolio. Publish from the main branch, repository root.
 
-- **Videogames** → `games.html`
-- **Books** → `books.html`
+The site supports /santiago-portfolio/ and other hosting prefixes. All page links and media use the directory containing app.js as the site root. Direct deep links and the previous .html page addresses are supported.
 
-Desktop uses a diagonal split that expands and brightens on hover. Mobile switches to stacked panels.
-
-## Update the existing GitHub Pages repo
-1. Copy **all files and the `assets` folder** from this package into the root of your local `santiago-portfolio` repository.
-2. Allow Windows to replace/merge existing files.
-3. In GitHub Desktop, commit the changes.
-4. Push origin.
-5. After Pages redeploys, hard-refresh with `Ctrl+F5`.
-
-`books.html` is intentionally a placeholder. `games.html` contains the previous games portfolio homepage.
+Edit app.js for content and style.css for presentation. Replace labeled concept imagery and evidence placeholders with verified project media. CV download remains pending; email and LinkedIn were preserved from the previous portfolio.
