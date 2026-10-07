@@ -1,0 +1,374 @@
+/* EVA visual fidelity pass — layered on top of style.css. */
+
+:root{
+  --ornament:url('assets/themes/hollow-overlay.svg');
+  --paper-wash:rgba(255,255,255,.16);
+  --edge-ink:rgba(13,18,18,.20);
+}
+
+body{
+  background:var(--paper);
+}
+
+.shell{
+  position:relative;
+  background:var(--paper);
+}
+
+/* Material + page ornament layers. */
+.shell::before{
+  background-image:
+    linear-gradient(var(--paper-wash),var(--paper-wash)),
+    var(--texture),
+    var(--paper-art)!important;
+  background-size:auto,340px 340px,220px 180px!important;
+  background-repeat:no-repeat,repeat,repeat!important;
+  mix-blend-mode:multiply;
+  opacity:.70!important;
+}
+.shell::after{
+  background-image:var(--ornament)!important;
+  background-size:cover!important;
+  background-position:center top!important;
+  background-repeat:no-repeat!important;
+  opacity:.95!important;
+  mask-image:none!important;
+}
+
+.page-edges{
+  position:fixed;
+  inset:0 0 0 var(--side-width);
+  pointer-events:none;
+  z-index:8;
+  background-image:var(--edges),var(--binding-art),var(--outer-art);
+  background-position:center,left top,right top;
+  background-size:100% 100%,34px 100%,32px 100%;
+  background-repeat:no-repeat;
+  opacity:.78;
+  mix-blend-mode:multiply;
+}
+
+/* Sidebar: art-led, with controls kept clean. */
+.identity{
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.90) 23%,rgba(0,0,0,.35) 49%,rgba(0,0,0,.75) 100%),
+    var(--side)!important;
+  box-shadow:8px 0 24px rgba(0,0,0,.12);
+}
+.identity::before{
+  border-right:1px solid color-mix(in srgb,var(--sidebar-accent) 42%,transparent)!important;
+  box-shadow:inset -12px 0 20px rgba(0,0,0,.12);
+}
+.identity::after{
+  background:
+    linear-gradient(180deg,#020303 0%,#020303 19%,transparent 42%,transparent 73%,rgba(0,0,0,.86) 100%)!important;
+}
+.sidebar-art{
+  inset:28% -7% -2%!important;
+  opacity:.96!important;
+  mask-image:linear-gradient(to bottom,transparent 0%,black 13%,black 88%,transparent 100%)!important;
+}
+.sidebar-art img{
+  filter:brightness(.78) contrast(1.14) saturate(.92)!important;
+  object-position:center bottom!important;
+}
+.studio-logo{
+  position:relative;
+  z-index:3;
+}
+.studio-logo::after{
+  content:'';
+  position:absolute;
+  left:16%;right:16%;bottom:-12px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--sidebar-accent),transparent);
+  opacity:.48;
+}
+.studio-logo img{
+  filter:drop-shadow(0 1px 0 rgba(255,255,255,.08));
+}
+.identity-divider{
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.34),transparent)!important;
+}
+.game-tabs{
+  position:relative;
+  z-index:4;
+}
+.game-tab{
+  font-family:Georgia,'Times New Roman',serif!important;
+  font-weight:400!important;
+  letter-spacing:.115em!important;
+  background:rgba(5,7,7,.84)!important;
+  border-color:rgba(232,231,218,.34)!important;
+  color:#ece9df!important;
+  backdrop-filter:blur(1px);
+}
+.game-tab:hover{
+  color:#fff!important;
+  border-color:var(--sidebar-accent)!important;
+  background:color-mix(in srgb,var(--sidebar-accent) 11%,#070909)!important;
+}
+.game-tab[aria-current=true]{
+  color:var(--sidebar-accent)!important;
+  border-color:var(--sidebar-accent)!important;
+  background:color-mix(in srgb,var(--sidebar-accent) 8%,#070909)!important;
+  box-shadow:inset 3px 0 var(--sidebar-accent),0 0 0 1px color-mix(in srgb,var(--sidebar-accent) 22%,transparent)!important;
+}
+.identity-bottom{
+  z-index:4;
+}
+.contact-links a{
+  color:#f1eee4;
+  text-shadow:0 1px 7px #000;
+}
+
+/* Main composition: editorial, not dashboard-like. */
+.game{
+  position:relative;
+  z-index:2;
+}
+.game::before{
+  content:'';
+  position:absolute;
+  pointer-events:none;
+  left:var(--space);right:var(--space);top:12px;height:1px;
+  background:linear-gradient(90deg,transparent 0,var(--line) 8%,var(--line) 82%,transparent 100%);
+  opacity:.42;
+}
+.game-heading{
+  position:relative;
+  z-index:3;
+}
+.title-group{
+  position:relative;
+}
+.title-group::before{
+  content:'';
+  position:absolute;
+  left:-18px;top:8px;width:1px;height:60%;
+  background:var(--accent);
+  opacity:.48;
+}
+h1{
+  text-shadow:0 1px 0 rgba(255,255,255,.38);
+}
+#game-subtitle{
+  font-family:Georgia,'Times New Roman',serif!important;
+  font-weight:600;
+  letter-spacing:.255em!important;
+}
+.metadata li{
+  background:color-mix(in srgb,var(--paper) 88%,transparent)!important;
+  border-color:color-mix(in srgb,var(--line) 76%,var(--ink))!important;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);
+}
+
+/* Hero frame / gallery: thin editorial framing with rough-corner hints. */
+.video-frame,.selected-image,.thumbnail{
+  background:
+    radial-gradient(circle at 50% 46%,color-mix(in srgb,var(--accent) 11%,var(--media)) 0%,var(--media) 58%),
+    var(--media)!important;
+  outline:1px solid color-mix(in srgb,var(--accent) 58%,var(--line))!important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.16),0 5px 16px rgba(29,18,11,.08);
+}
+.video-frame::after{
+  inset:7px!important;
+  border-color:color-mix(in srgb,#fff 18%,transparent)!important;
+}
+.video-frame::before{
+  background-image:var(--motif)!important;
+  background-size:cover!important;
+  opacity:.13!important;
+  mix-blend-mode:screen!important;
+}
+.video-empty,.video-start{
+  text-shadow:0 2px 10px rgba(0,0,0,.78);
+}
+.play-symbol{
+  border-width:2px!important;
+  border-color:rgba(244,245,236,.88)!important;
+  box-shadow:0 0 18px rgba(0,0,0,.3),inset 0 0 20px rgba(255,255,255,.04);
+}
+.media-corner,.image-marker{
+  font-family:Georgia,'Times New Roman',serif!important;
+  letter-spacing:.12em!important;
+  color:#efede4!important;
+  text-shadow:0 2px 7px #000;
+}
+
+.project-pitch{
+  position:relative;
+  z-index:3;
+}
+.project-logo{
+  min-height:88px;
+  margin-bottom:4px;
+}
+.project-logo img{
+  max-width:72%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  filter:contrast(1.08) drop-shadow(0 1px 0 rgba(255,255,255,.2));
+  mix-blend-mode:multiply;
+  mask-image:radial-gradient(ellipse at center,#000 52%,transparent 84%)!important;
+}
+.accent-divider{
+  width:48px!important;
+  height:2px!important;
+  box-shadow:0 0 0 1px color-mix(in srgb,var(--accent) 12%,transparent);
+}
+.pitch-copy p{
+  text-wrap:pretty;
+}
+.pitch-copy #description-secondary{
+  opacity:.80;
+}
+
+.gallery{
+  position:relative;
+  z-index:3;
+  border-top-color:color-mix(in srgb,var(--line) 74%,var(--ink))!important;
+}
+.gallery h2{
+  font-family:Georgia,'Times New Roman',serif!important;
+  letter-spacing:.145em!important;
+}
+.gallery h2::after{
+  width:44px!important;
+}
+.thumbnail{
+  box-shadow:none;
+}
+.thumbnail:hover{
+  outline-width:1px!important;
+  transform:translateY(-1px);
+}
+
+/* Hollow Graves — colder, cleaner, scientific-occult. */
+body[data-theme=hollow]{
+  --ornament:url('assets/themes/hollow-overlay.svg');
+  --paper-wash:rgba(236,249,250,.20);
+}
+body[data-theme=hollow] .shell::before{
+  opacity:.52!important;
+}
+body[data-theme=hollow] .page-edges{
+  opacity:.64;
+}
+body[data-theme=hollow] .identity{
+  box-shadow:8px 0 26px rgba(0,80,90,.10);
+}
+body[data-theme=hollow] .sidebar-art img{
+  filter:brightness(.78) contrast(1.18) saturate(1.07) hue-rotate(-3deg)!important;
+}
+body[data-theme=hollow] .game-tab[aria-current=true]{
+  text-shadow:0 0 12px color-mix(in srgb,var(--sidebar-accent) 34%,transparent);
+}
+body[data-theme=hollow] h1{
+  font-family:Georgia,'Times New Roman',serif!important;
+  font-weight:700!important;
+  letter-spacing:-.048em!important;
+}
+body[data-theme=hollow] .project-logo img{
+  filter:grayscale(.55) contrast(1.25) brightness(.88) sepia(.08) hue-rotate(130deg);
+}
+body[data-theme=hollow] .video-frame,
+body[data-theme=hollow] .selected-image,
+body[data-theme=hollow] .thumbnail{
+  background:
+    radial-gradient(circle at 50% 48%,#173d43 0%,#10282d 45%,#091419 100%)!important;
+}
+
+/* Reditus — parchment manuscript + infernal red. */
+body[data-theme=reditus]{
+  --ornament:url('assets/themes/reditus-overlay.svg');
+  --paper-wash:rgba(255,244,221,.16);
+}
+body[data-theme=reditus] .shell::before{
+  opacity:.78!important;
+}
+body[data-theme=reditus] .page-edges{
+  opacity:.88;
+}
+body[data-theme=reditus] .sidebar-art img{
+  filter:brightness(.72) contrast(1.22) saturate(.95)!important;
+}
+body[data-theme=reditus] h1{
+  font-family:'Cinzel','Palatino Linotype',Palatino,serif!important;
+  font-weight:500!important;
+  letter-spacing:-.035em!important;
+}
+body[data-theme=reditus] .game-tab[aria-current=true]{
+  color:#f1d4c1!important;
+}
+body[data-theme=reditus] .project-logo img{
+  filter:grayscale(.75) sepia(.28) contrast(1.35) brightness(.74);
+}
+body[data-theme=reditus] .video-frame,
+body[data-theme=reditus] .selected-image,
+body[data-theme=reditus] .thumbnail{
+  background:
+    radial-gradient(circle at 50% 45%,#54231d 0%,#2e1714 43%,#160b0a 100%)!important;
+}
+body[data-theme=reditus] .accent-divider,
+body[data-theme=reditus] .gallery h2::after{
+  box-shadow:0 0 8px rgba(147,42,38,.18);
+}
+
+/* Dreadwoods — rough folkloric field-journal character. */
+body[data-theme=dreadwoods]{
+  --ornament:url('assets/themes/dreadwoods-overlay.svg');
+  --paper-wash:rgba(248,239,219,.12);
+}
+body[data-theme=dreadwoods] .shell::before{
+  opacity:.76!important;
+}
+body[data-theme=dreadwoods] .page-edges{
+  opacity:.90;
+}
+body[data-theme=dreadwoods] .sidebar-art img{
+  filter:brightness(.66) contrast(1.26) saturate(.72)!important;
+}
+body[data-theme=dreadwoods] h1{
+  font-family:'Baskerville','Libre Baskerville',Georgia,serif!important;
+  font-weight:700!important;
+  letter-spacing:.005em!important;
+}
+body[data-theme=dreadwoods] .game-tab[aria-current=true]{
+  color:#f0d7c8!important;
+}
+body[data-theme=dreadwoods] .project-logo img{
+  filter:grayscale(.95) contrast(1.55) brightness(.72) sepia(.18);
+}
+body[data-theme=dreadwoods] .video-frame,
+body[data-theme=dreadwoods] .selected-image,
+body[data-theme=dreadwoods] .thumbnail{
+  background:
+    radial-gradient(circle at 50% 45%,#30342d 0%,#1d211c 52%,#10120f 100%)!important;
+}
+body[data-theme=dreadwoods] .game::after{
+  content:'';
+  position:absolute;
+  right:1.2%;bottom:2.5%;width:130px;height:170px;
+  background:var(--motif) right bottom/contain no-repeat;
+  opacity:.13;
+  pointer-events:none;
+}
+
+@media(min-width:1200px){
+  .identity{padding-left:clamp(20px,1.5vw,30px);padding-right:clamp(20px,1.5vw,30px)}
+  .game{padding-left:clamp(30px,2.6vw,52px);padding-right:clamp(34px,3.2vw,64px)}
+  .content-row{gap:clamp(28px,3.3vw,64px)!important}
+  .pitch-copy{max-width:430px}
+}
+
+@media(max-width:700px){
+  .page-edges{display:none}
+  .shell::after{opacity:.28!important}
+  .sidebar-art{opacity:.22!important}
+  .game::before,.title-group::before{display:none}
+  body[data-theme=dreadwoods] .game::after{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .thumbnail:hover{transform:none}
+}
