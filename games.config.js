@@ -35,7 +35,7 @@ window.PORTFOLIO = {
   games:[
     {
       id:'hollow-graves',theme:'hollow',title:'HOLLOW GRAVES',subtitle:'Systemic sci-fi investigation horror.',genre:'Sci-Fi Horror',status:'',
-      logo:'assets/themes/hollow-symbol.jpg',logoAlt:'Hollow Graves astral symbol — reference crop',
+      logo:'assets/themes/hollow-mark.svg',logoAlt:'Hollow Graves astral eclipse insignia',
       descriptionPrimary:'An investigation-horror experience across haunted systems, where forgotten worlds echo with an ancient astral corruption.',
       descriptionSecondary:'Uncover remnants of lost civilizations, descend into ritual spaces and confront entities beyond reality. Science, faith and the void intertwine.',
       video:{type:'file',src:'',poster:'',captions:'',label:'Gameplay video'},
@@ -43,7 +43,7 @@ window.PORTFOLIO = {
     },
     {
       id:'reditus-umbrae',theme:'reditus',title:'REDITUS UMBRAE',subtitle:'Dark action combat prototype.',genre:'Action RPG',status:'',
-      logo:'assets/themes/reditus-symbol.jpg',logoAlt:'Reditus Umbrae ritual sword symbol — reference crop',
+      logo:'assets/themes/reditus-mark.svg',logoAlt:'Reditus Umbrae sword and crescent insignia',
       descriptionPrimary:'A dark action prototype set in an infernal realm, focused on visceral combat, technical animation and oppressive atmosphere.',
       descriptionSecondary:'Explore a world inspired by medieval mythology and the Dantean journey, where penitence and violence intertwine.',
       video:{type:'file',src:'',poster:'',captions:'',label:'Gameplay video'},
@@ -51,7 +51,7 @@ window.PORTFOLIO = {
     },
     {
       id:'dreadwoods',theme:'dreadwoods',title:'DREADWOODS',subtitle:'Dark folkloric survival horror.',genre:'Survival Horror',status:'',
-      logo:'assets/themes/dreadwoods-symbol.jpg',logoAlt:'Dreadwoods antler and moon symbol — reference crop',
+      logo:'assets/themes/dreadwoods-mark.svg',logoAlt:'Dreadwoods antler and moon insignia',
       descriptionPrimary:'Venture into a forgotten forest where ancient beliefs linger and something hunts between the trees. Scavenge, survive and uncover the truth behind a hidden celebration.',
       descriptionSecondary:'A dark folkloric survival horror rooted in local myths and traditions, blending atmospheric exploration with tense encounters.',
       video:{type:'file',src:'',poster:'',captions:'',label:'Gameplay video'},
