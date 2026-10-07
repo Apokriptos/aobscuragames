@@ -1,2 +1,31 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101313"><meta name="description" content="Santiago Pérez Losanovscky — Game & Systems Designer, Level Designer, Unreal Engine Technical Prototyper and Game Design Educator."><title>Playable & Written Worlds — Santiago Pérez Losanovscky</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23101313'/%3E%3Cpath d='M7 25 20 7h5L12 25Z' fill='%23a6c9bc'/%3E%3C/svg%3E"><link rel="stylesheet" href="./style.css"><script defer src="./app.js"></script></head><body><a href="#main" style="position:absolute;left:-10000px" onfocus="this.style.left='16px';this.style.zIndex='99'" onblur="this.style.left='-10000px'">Skip to content</a><div id="app"></div><noscript>This portfolio needs JavaScript to display its pages. Please enable JavaScript.</noscript></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#30312f">
+  <meta name="description" content="Three current games by Santiago Pérez Losanovscky. EVA B2B showcase: Hollow Graves, Reditus Umbrae and Dreadwoods.">
+  <title>Current Games — Santiago Pérez Losanovscky</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2330312f'/%3E%3Cpath d='m16 6 10 10-10 10L6 16Z' fill='%23b33b34'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./games.config.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#game-title">Skip to game</a>
+  <div class="shell">
+    <aside class="identity" aria-label="Identity and contact">
+      <div class="identity-top"><div class="identity-name" id="identity-name"></div><p id="identity-role"></p><div class="identity-divider"></div><p class="meeting-label">EVA <span>/</span> B2B</p></div>
+      <div class="identity-bottom"><p class="identity-note">Current games.<br>Conversations welcome.</p><div class="identity-divider"></div><div class="contact-links" id="contact-links"></div></div>
+    </aside>
+    <main class="game" id="game-panel" aria-labelledby="game-title">
+      <header class="game-heading"><div class="title-group"><h1 id="game-title" tabindex="-1"></h1><p id="game-subtitle"></p></div><ul class="metadata" id="metadata" aria-label="Game details"></ul></header>
+      <section class="video-frame" id="video-frame" aria-label="Game video"></section>
+      <section class="gallery" aria-label="Game images"><div class="gallery-heading"><h2>Images</h2><span id="image-count"></span></div><div class="gallery-body"><figure class="selected-image" id="selected-image"></figure><div class="thumbnails" id="thumbnails" role="group" aria-label="Choose an image"></div></div></section>
+    </main>
+    <nav class="game-index" aria-label="Switch game"><div class="game-counter"><strong id="game-number">01</strong><span> / 03</span></div><div class="rail-controls"><button id="previous-game" class="rail-arrow" aria-label="Previous game"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m10 5 6 9H4Z"/></svg></button><div class="diamonds" id="diamonds"></div><button id="next-game" class="rail-arrow" aria-label="Next game"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m10 15 6-9H4Z"/></svg></button></div><span class="rail-label" aria-hidden="true">GAMES</span></nav>
+  </div>
+  <p class="sr-only" id="announcement" role="status" aria-live="polite" aria-atomic="true"></p>
+  <noscript><p class="noscript">Enable JavaScript to switch between Hollow Graves, Reditus Umbrae and Dreadwoods. Contact: santiagolovsky@gmail.com.</p></noscript>
+</body>
+</html>

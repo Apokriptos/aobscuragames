@@ -1,37 +1,114 @@
-const siteBase = new URL(".", document.currentScript.src).pathname.replace(/\/$/, "");
-const base='/games/';
-const labels={hollow:'Hollow Graves',animation:'Technical Animation',lab:'Unreal Prototyping Lab',drill:'Drill to the Rend',fulbo:'Fulbo Galaxy',match:'Match Island'};
-const routes={hollow:'hollow-graves',animation:'technical-animation',lab:'unreal-prototyping-lab',drill:'drill-to-the-rend',fulbo:'fulbo-galaxy',match:'match-island'};
-const url=k=>base+routes[k]+'/';
-const link=(href,text)=>`<a class="text-link" href="${href}">${text}<span class="arrow" aria-hidden="true">↗</span></a>`;
-const nav=()=>`<header class="topbar wrap"><a class="brand" href="/">Santiago Pérez Losanovscky<small>GAME & SYSTEMS DESIGNER</small></a><button class="menu" aria-expanded="false" aria-controls="navigation">Menu</button><nav class="nav" id="navigation" aria-label="Main navigation"><a href="/games/#work">Work</a><a href="/games/#capabilities">Capabilities</a><a href="/games/#about">About</a><a href="/games/#resume">CV / Resume</a><a class="contact-link" href="/games/#contact">Contact ↗</a></nav></header>`;
-const foot=()=>`<footer class="footer wrap"><span>© ${new Date().getFullYear()} Santiago Pérez Losanovscky</span><a href="/">Choose a world ↗</a><a href="/books/">Books</a></footer>`;
-const placeholder=(title,description,wide=false)=>`<div class="placeholder ${wide?'wide':''}"><span class="placeholder-symbol" aria-hidden="true">[ &nbsp; ]</span><span class="meta">Media placeholder</span><strong>${title}</strong><p>${description}</p></div>`;
-const scene=()=>`<img src="/assets/atmosphere.jpg" alt="Illustrative concept image of a ruined chapel and cemetery in teal mist, with a small amber light" loading="lazy">`;
-const art=(num,title,sub)=>`<div class="project-art"><span class="art-label">${sub}</span><span class="big-number">${num}</span><span class="art-title">${title}</span></div>`;
-const chooser=()=>`<main class="chooser" id="main"><div class="chooser-header"><div class="name">Santiago Pérez<br>Losanovscky</div><span class="meta">Design · Worlds · Stories</span></div><a class="choice choice-game" href="/games/"><div class="choice-bg"></div><div class="choice-content"><span class="meta">01 / Playable worlds</span><h1>VIDEOGAMES</h1><span class="choice-enter">Explore the work <span aria-hidden="true">↗</span></span></div></a><a class="choice choice-books" href="/books/"><div class="choice-content"><span class="meta">02 / Written worlds</span><h2>BOOKS</h2><span class="choice-enter">Turn the page <span aria-hidden="true">↗</span></span></div></a><div class="chooser-footer"><span>Two ways of building worlds.</span><span class="concept-label">Illustrative concept imagery</span></div></main>`;
-const caps=[['Systems Design','Rules, interactions and feedback that give players meaningful choices.','hollow'],['Level Design','Spaces shaped around exploration, player readability and systemic play.','hollow'],['Technical Design / Unreal Engine','Taking design intent into Blueprint architecture and playable implementation.','hollow'],['Gameplay Prototyping','Making ideas tangible through focused, testable Unreal Engine prototypes.','lab'],['Technical Animation','Connecting movement, procedural responses and animation states to gameplay.','animation'],['Narrative Design','Embedding story in investigation, systems and the spaces players explore.','hollow'],['Team Leadership / Collaboration','Connecting design direction, implementation and shared understanding across a team.','lab'],['Game Design Education','Teaching design through practical exploration and hands-on development.','lab']];
-const home=()=>`${nav()}<main id="main" class="wrap"><section class="hero"><div><p class="eyebrow">Game & Systems Designer · Unreal Engine</p><h1>Designing systems,<br>spaces and<br><em>playable worlds.</em></h1></div><div class="hero-copy"><p>I design gameplay systems, levels and production-ready prototypes. My practice connects hands-on Unreal Engine implementation with team leadership and game design education.</p>${link('#work','Explore selected work')}</div></section><section id="work"><div class="section-top"><h2>Selected work</h2><span>01 — 03 / Design & implementation</span></div><a class="flagship" href="${url('hollow')}"><div class="scene">${scene()}</div><span class="image-note">Concept placeholder · not gameplay</span><div class="feature-text"><span class="eyebrow">01 / Flagship solo project · Unreal Engine</span><h2>Hollow Graves</h2><p>A dark systemic horror investigation game.<br>A world to read. An ecosystem to understand.</p></div><span class="feature-action" aria-label="View Hollow Graves">↗</span></a><div class="feature-bottom"><span>Systems design / Level design / Blueprint architecture</span><span>Explore the principal case study ↗</span></div><article class="secondary-project"><a href="${url('animation')}">${art('02','Motion with purpose','Technical portfolio / Unreal Engine')}</a><div class="project-copy"><span class="eyebrow">02 / Technical implementation</span><h3>Technical Animation</h3><p>Where animation becomes part of the system. State machines, contextual movement, secondary motion and Control Rig, connected to gameplay.</p>${link(url('animation'),'Explore the breakdowns')}</div></article><article class="secondary-project reverse"><a href="${url('lab')}">${art('03','Ideas into play','Education × hands-on prototyping')}</a><div class="project-copy"><span class="eyebrow">03 / Prototypes & teaching</span><h3>Unreal Prototyping Lab</h3><p>Design ideas made playable. A space for technical experiments, teaching examples and the process of learning by building in Unreal Engine.</p>${link(url('lab'),'Enter the lab')}</div></article><div class="section-top"><h2>Other projects</h2><span>A broader practice</span></div><div class="supporting">${['drill','fulbo','match'].map((k,i)=>`<a class="small-project" href="${url(k)}"><span class="eyebrow">0${i+4} / Project archive</span><h3>${labels[k]}</h3><div class="small-bottom"><span>Project notes · details forthcoming</span><span class="arrow">↗</span></div></a>`).join('')}</div></section><section id="capabilities" class="capabilities"><div class="section-top"><h2>Capabilities</h2><span>From intent to implementation</span></div><div class="cap-grid">${caps.map(c=>`<article class="cap"><h3>${c[0]}</h3><p>${c[1]}</p><a href="${url(c[2])}">Explore ${labels[c[2]]} ↗</a></article>`).join('')}</div></section><section id="about" class="about rule"><div><p class="eyebrow">About / Santiago</p><h2 style="margin-top:24px">Between design<br>and implementation.</h2></div><div><p>I work at the intersection of game design and technical implementation. I enjoy understanding how systems behave, how players read spaces, and how an idea becomes something you can actually play.</p><p>My work spans systems and level design, Unreal Engine prototyping, leading teams and teaching game design.</p><p class="roles">Game & Systems Designer · Level Designer<br>Unreal Engine Technical Prototyper · Game Design Educator</p></div></section><section id="contact" class="contact rule"><p class="eyebrow">Contact</p><h2 style="margin-top:20px">Let’s build something playable.</h2><div class="contact-grid"><p>For game design, Unreal Engine prototyping,<br>collaboration and teaching.</p><div><a class="pending" href="mailto:santiagolovsky@gmail.com"><strong>Email</strong><span>santiagolovsky@gmail.com ↗</span></a><a class="pending" href="https://www.linkedin.com/in/santiago-perez-losanovscky-a91877172" target="_blank" rel="noopener noreferrer"><strong>LinkedIn</strong><span>View profile ↗</span></a><div id="resume" class="pending"><strong>CV / Resume</strong><span>Download forthcoming</span></div></div></div></section></main>${foot()}`;
-const hollowSections=[
-['ecosystem','Systemic horror / Astral Ecosystem','How can horror emerge from a world’s behavior rather than depend only on isolated scripted moments?','This section is reserved for the Astral Ecosystem: its rules, relationships and the signals a player can learn to read.','Ecosystem behavior in play','Add gameplay footage, a rules diagram and an annotated example of an emergent interaction.'],
-['investigation','Investigation & clue architecture','How can the player connect evidence while preserving uncertainty and the satisfaction of discovery?','Document the relationship between clues, hypotheses, progression and environmental storytelling. Show where the player is guided and where interpretation remains open.','Clue network / investigation flow','Add an actual clue map and a recorded investigation sequence.'],
-['spaces','Level design & systemic spaces','How can a space support navigation, tension and multiple interacting gameplay systems?','Pair the level’s intended player experience with blockout decisions, routes, sightlines and changes informed by playtesting.','Blockout → playable space','Add paired before-and-after screenshots with annotations and a traversal video.'],
-['lantern','Lantern / ghost gameplay','How does the player read and respond to supernatural activity through a physical, readable interaction?','Explain the lantern’s role, the ghost interaction rules and the feedback connecting player input to the world’s response.','Lantern and ghost encounter','Add a gameplay clip showing the interaction, feedback and resulting player decision.'],
-['blueprints','Blueprint gameplay architecture','How can interdependent gameplay features remain understandable as the project evolves?','Present the actual Blueprint responsibilities, interfaces and event flow. Connect each technical decision to the design requirement it supports.','Blueprint architecture breakdown','Add large, readable Blueprint captures and a system responsibility diagram.'],
-['narrative','Narrative through systems & exploration','How can story be discovered through action and observation?','Trace a narrative beat through its place in the environment, the supporting clues and the systems that make it playable.','A narrative beat, mapped','Add an annotated location, its narrative purpose and the associated gameplay sequence.'],
-['documentation','Design documentation & diagrams','How can documentation help a design become a coherent, testable implementation?','Show a focused design document alongside the system it describes, including meaningful revisions and the reasons behind them.','Design intent → implementation','Add document excerpts, diagrams and a version comparison with the final playable result.']];
-const caseIntro=(eyebrow,title,desc,facts)=>`<a class="back" href="/games/#work">← Selected work</a><header class="case-hero"><p class="eyebrow">${eyebrow}</p><h1>${title}</h1><div class="case-intro"><p>${desc}</p><div class="case-facts">${facts.map(f=>`<div><span>${f[0]}</span>${f[1]}</div>`).join('')}</div></div></header>`;
-const next=(k)=>`<section class="next-project"><p class="eyebrow">Continue exploring</p><a href="${url(k)}">${labels[k]}<span>↗</span></a></section>`;
-const hollow=()=>`${nav()}<main id="main" class="wrap">${caseIntro('01 / Principal case study','Hollow Graves','A dark systemic horror investigation game built in Unreal Engine. A solo project bringing systems, spaces, investigation and narrative into a single playable world.',[['Role','Solo developer / designer'],['Engine','Unreal Engine'],['Focus','Systemic horror · investigation']])}<div class="case-banner">${scene()}<span class="image-note">Concept placeholder · not gameplay</span><div class="banner-title">Read the space.<br>Understand the unseen.</div></div><nav class="case-nav" aria-label="Case study sections">${hollowSections.map((s,i)=>`<a href="#${s[0]}">0${i+1} ${s[1].split(' / ')[0].split(' & ')[0]}</a>`).join('')}</nav><p class="editor-note">Case-study framework. The design questions below organize the story; implementation details, playtest findings and project media are awaiting the actual project material.</p>${hollowSections.map((s,i)=>`<section class="case-section" id="${s[0]}"><div class="section-heading"><span class="index">0${i+1}</span><h2>${s[1]}</h2></div><div class="breakdown"><div><h3>The design question</h3><p>${s[2]}</p></div><div><h3>Solution / evidence to document</h3><p>${s[3]}</p></div></div>${placeholder(s[4],s[5],true)}${i===4?`<div class="media-pair">${placeholder('Blueprint detail','Full-resolution technical screenshot.')}${placeholder('Gameplay result','Footage of the system in context.')}</div>`:''}</section>`).join('')}${next('animation')}</main>${foot()}`;
-const animationSections=[['systems','Animation Systems','State machines, blends, layered animation and montages.','Show how movement and action states transition, how animation layers share responsibility, and how interruption is handled.','State machine / AnimGraph'],['procedural','Procedural / Context-Aware Animation','Surface avoidance, contextual interaction alignment and runtime pose adjustment.','Show the context the system detects, the adjustment it makes and the limits that keep the response readable.','Procedural setup / Blueprint'],['secondary','Dynamic / Secondary Animation','Lantern inertia, sway and physics-driven secondary motion.','Connect motion to player movement and interaction. Document the balance between physical response and gameplay readability.','Secondary motion / tuning'],['rig','Control Rig / Animation Authoring','Control Rig, Sequencer, FK posing and animation editing inside Unreal.','Show the rig controls, the authoring workflow and the resulting pose or animation in context.','Control Rig / Sequencer'],['integration','Gameplay Integration','First-person full-body setup, sockets, props and gameplay-driven animation states.','Show how animation responds to gameplay events and how the character, camera and held props stay connected.','Gameplay events / socket setup']];
-const animation=()=>`${nav()}<main id="main" class="wrap">${caseIntro('02 / Technical portfolio','Technical<br>Animation','Animation as a gameplay system. From authored movement to procedural responses, this collection connects technical decisions with what the player sees and feels.',[['Engine','Unreal Engine'],['Practice','Technical animation'],['Format','Implementation breakdowns']])}<nav class="case-nav" aria-label="Animation categories">${animationSections.map((s,i)=>`<a href="#${s[0]}">0${i+1} ${s[1].split(' / ')[0]}</a>`).join('')}</nav><p class="editor-note">Showcase structure. Each category below has reserved space for real footage, implementation images and final gameplay results. Specific problems and outcomes will be added with each piece.</p>${animationSections.map((s,i)=>`<section class="case-section" id="${s[0]}"><div class="section-heading"><span class="index">0${i+1}</span><h2>${s[1]}</h2></div><div class="breakdown"><div><h3>Focus / problem</h3><p>${s[2]} The specific behavior and design constraint will be documented with the example.</p></div><div><h3>Implementation breakdown</h3><p>${s[3]}</p></div></div>${placeholder('Video walkthrough',`Reserved for an embedded ${s[1].toLowerCase()} demonstration.`,true)}<div class="media-pair">${placeholder(s[4],'Add an annotated, full-resolution technical capture. Click-to-expand support can be added with the source image.')}${placeholder('Final gameplay result','Add in-engine footage of the completed behavior and a short explanation of the result.')}</div></section>`).join('')}${next('lab')}</main>${foot()}`;
-const lab=()=>`${nav()}<main id="main" class="wrap">${caseIntro('03 / Teaching & prototyping','Unreal<br>Prototyping Lab','A collection for educational design and hands-on Unreal development: building playable examples to explore ideas, expose system behavior and make design decisions tangible.',[['Practice','Game design education'],['Tools','Unreal Engine · Blueprints'],['Collection','Examples forthcoming']])}<p class="editor-note">Individual prototypes, lesson examples and outcomes have not been supplied. These sections are prepared for verified work.</p>${[['Educational design','Explain the concept, what the learner builds and how the exercise reveals a design principle.','Lesson example / playable exercise'],['Technical prototyping','Start with the question being tested, then show the smallest playable implementation and what was learned.','Prototype walkthrough / Blueprint'],['Design & collaboration','Show how a brief, shared documentation or feedback helped a team connect design intent to implementation.','Brief / iteration / team contribution']].map((s,i)=>`<section class="case-section"><div class="section-heading"><span class="index">0${i+1}</span><h2>${s[0]}</h2></div><p style="max-width:680px;margin-bottom:30px">${s[1]}</p>${placeholder(s[2],'Project material forthcoming.',true)}</section>`).join('')}${next('hollow')}</main>${foot()}`;
-const supporting=k=>`${nav()}<main id="main" class="wrap">${caseIntro('Supporting project / Archive',labels[k],'A supporting project in Santiago’s game design portfolio. The project-specific case study will be added with verified details and media.',[['Role','To be documented'],['Scope','To be documented'],['Status','Case study forthcoming']])}${placeholder('Project showcase','Add a gameplay video or representative project image.',true)}<section class="case-section"><div class="section-heading"><span class="index">01</span><h2>Project notes</h2></div><div class="breakdown"><div><h3>Context & contribution</h3><p>Reserved for the project brief, team context and Santiago’s specific responsibilities.</p></div><div><h3>Design & outcome</h3><p>Reserved for the design challenge, the implemented solution and supporting gameplay evidence.</p></div></div></section>${next('hollow')}</main>${foot()}`;
-const books=()=>`<header class="topbar wrap"><a class="brand" href="/">Santiago Pérez Losanovscky<small>WRITTEN WORLDS</small></a><nav class="nav open" style="position:static;background:none;border:0;display:flex;padding:0" aria-label="Books navigation"><a href="/">Home</a><a href="/games/">Videogames ↗</a></nav></header><main class="wrap" id="main"><section class="books-intro"><div><p class="eyebrow">02 / Written worlds</p><h1>Books.</h1></div><p>A space for stories on the page.<br>Books, excerpts and publication details will live here as they become available.</p></section><div class="section-top"><h2>The bookshelf</h2><span>In preparation</span></div><section class="book-empty"><div class="book-cover">Cover forthcoming</div><div><p class="eyebrow">Future publication</p><h2>A place for the next story.</h2><p>Book titles, descriptions and publication links have not been announced here yet. This shelf is ready for them.</p><details><summary>Excerpt · forthcoming</summary><p>A selected excerpt will appear here once publication material is available.</p></details><div class="pending"><strong>Publication links</strong><span>Forthcoming</span></div></div></section></main>${foot()}`;
-const path=location.pathname.slice(siteBase.length).replace(/\/index\.html$/,'/').replace(/\/$/,'')||'/';let html,title;
-if(path==='/'){html=chooser();title='Santiago Pérez Losanovscky — Playable & Written Worlds'}else if(path==='/games'){html=home();title='Game & Systems Design — Santiago Pérez Losanovscky'}else if(path==='/books'){html=books();title='Books — Santiago Pérez Losanovscky';document.body.classList.add('books-page')}else{const key=Object.keys(routes).find(k=>path===base+routes[k]);title=(labels[key]||'Page not found')+' — Santiago Pérez Losanovscky';html=key==='hollow'?hollow():key==='animation'?animation():key==='lab'?lab():key?supporting(key):`${nav()}<main class="wrap case-hero" id="main"><h1>Page not found.</h1>${link('/','Return home')}</main>${foot()}`}
-document.title=title;document.getElementById('app').innerHTML=html.replace(/(href|src)="\/(?!\/)/g, '$1="' + siteBase + '/');
-const menu=document.querySelector('.menu');menu?.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));document.getElementById('navigation').classList.toggle('open',open)});document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>{menu?.setAttribute('aria-expanded','false');document.getElementById('navigation')?.classList.remove('open')}));
-if(location.hash)requestAnimationFrame(()=>document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView());
-
-
+'use strict';
+(() => {
+  const root = new URL('.', document.currentScript.src);
+  const data = window.PORTFOLIO;
+  if (!data || data.games.length !== 3) throw new Error('The EVA showcase requires exactly three configured games.');
+  const $ = id => document.getElementById(id);
+  const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text) n.textContent = text; return n; };
+  const number = n => String(n + 1).padStart(2, '0');
+  const mediaURL = value => {
+    if (!value) return '';
+    try { const url = new URL(value, root); return ['http:', 'https:'].includes(url.protocol) ? url.href : ''; } catch { return ''; }
+  };
+  const icon = kind => {
+    const node = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    node.setAttribute('viewBox','0 0 24 24'); node.setAttribute('aria-hidden','true');
+    const paths = {image:'M3 4h18v16H3ZM3 16l5-5 4 4 3-3 6 5M16 8h.01',play:'m8 4 13 8L8 20Z',email:'M3 5h18v14H3ZM3 6l9 7 9-7',link:'M9 15l6-6M7 13l-2 2a3 3 0 0 0 4 4l4-4M11 9l4-4a3 3 0 0 1 4 4l-2 2'};
+    const p = document.createElementNS(node.namespaceURI,'path'); p.setAttribute('d',paths[kind]); node.append(p); return node;
+  };
+  let current = 0, selected = 0, mediaVersion = 0;
+  const imageRequests = new WeakMap();
+  $('identity-name').textContent = data.identity.name;
+  $('identity-role').textContent = data.identity.descriptor;
+  document.title = `Current Games — ${data.identity.name}`;
+  [['email','Email'],['linkedin','LinkedIn'],['instagram','Instagram'],['website','Website']].forEach(([key,label]) => {
+    const value = data.identity[key]; if (!value) return;
+    const a = el('a'); a.href = key === 'email' ? `mailto:${value}` : mediaURL(value); if (!a.href) return;
+    a.setAttribute('aria-label', label); a.append(icon(key === 'email' ? 'email' : 'link'), el('span','',label));
+    if (key !== 'email') { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+    $('contact-links').append(a);
+  });
+  data.games.forEach((game, i) => {
+    const b = el('button','diamond-button'); b.type = 'button'; b.setAttribute('aria-label',`Show ${game.title}`); b.setAttribute('aria-controls','game-panel');
+    b.append(el('span','diamond-shape'),el('span','diamond-tooltip',game.title)); b.addEventListener('click',()=>showGame(i)); $('diamonds').append(b);
+  });
+  function placeholder(i, small = false) {
+    const p = el('div','image-placeholder'); p.append(icon('image'),el('span','',small ? number(i) : 'Image forthcoming')); return p;
+  }
+  function imageInto(container, item, i, small) {
+    const request = {}; imageRequests.set(container, request);
+    const src = mediaURL(item?.src);
+    container.replaceChildren(placeholder(i, small));
+    if (!src) return;
+    const img = el('img'); img.alt = small ? '' : (item.alt || `${data.games[current].title} — image ${i + 1}`);
+    img.addEventListener('load',()=>{ if (!container.isConnected || imageRequests.get(container) !== request) return; container.replaceChildren(img); if (!small && item.caption) container.append(el('figcaption','',item.caption)); },{once:true});
+    img.addEventListener('error',()=>{ img.remove(); },{once:true}); img.src = src;
+  }
+  function showImage(i, announce = false) {
+    const images = data.games[current].images.slice(0,4); if (!images.length) return;
+    selected = i; imageInto($('selected-image'),images[i],i,false);
+    if (!images[i].src) $('selected-image').append(el('span','image-marker',`${number(i)} / ${data.games[current].title}`));
+    [...$('thumbnails').children].forEach((b,j)=>b.setAttribute('aria-pressed',String(j === i)));
+    $('image-count').textContent = `${number(i)} / ${String(images.length).padStart(2,'0')}`;
+    if (announce) $('announcement').textContent = `${data.games[current].title}, image ${i+1} of ${images.length}.`;
+  }
+  function showGallery(game) {
+    $('thumbnails').replaceChildren(); const images = game.images.slice(0,4);
+    if (!images.length) { $('selected-image').replaceChildren(placeholder(0)); $('image-count').textContent = ''; return; }
+    images.forEach((item, i) => {
+      const b = el('button','thumbnail'); b.type = 'button'; b.setAttribute('aria-label',`Show image ${i+1} for ${game.title}`); b.setAttribute('aria-controls','selected-image'); b.setAttribute('aria-pressed','false');
+      imageInto(b,item,i,true); b.addEventListener('click',()=>showImage(i,true));
+      b.addEventListener('keydown',e=>{ if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) return; e.preventDefault(); e.stopPropagation(); const next = (i + (['ArrowRight','ArrowDown'].includes(e.key)?1:-1) + images.length)%images.length; showImage(next,true); $('thumbnails').children[next].focus(); });
+      $('thumbnails').append(b);
+    }); showImage(0);
+  }
+  function showVideo(game) {
+    const frame = $('video-frame'); const version = ++mediaVersion;
+    const previous = frame.querySelector('video'); if (previous) previous.pause();
+    frame.replaceChildren(); frame.setAttribute('aria-label',`${game.title} video`);
+    const config = game.video || {}, src = mediaURL(config.src);
+    const poster = mediaURL(config.poster);
+    if (poster) { const img = el('img','video-poster'); img.alt = ''; img.src = poster; img.addEventListener('error',()=>img.remove(),{once:true}); frame.append(img); }
+    const center = el(src ? 'button' : 'div', src ? 'video-start' : 'video-empty');
+    const play = el('span','play-symbol'); play.setAttribute('aria-hidden','true'); play.append(icon('play'));
+    center.append(play,el('strong','',src ? (config.label || 'Play video') : 'Footage forthcoming'),el('p','',src ? 'Play video' : 'Gameplay video will appear here.'));
+    frame.append(center,el('span','media-corner',game.title),el('span','media-corner right',src ? 'GAME VIDEO' : 'VIDEO PLACEHOLDER'));
+    if (!src) return;
+    center.type = 'button'; center.setAttribute('aria-label',`Play ${game.title} video`);
+    center.addEventListener('click',()=>{
+      if (version !== mediaVersion) return;
+      frame.replaceChildren();
+      if (config.type === 'embed') {
+        const player = new URL(src); player.searchParams.set('autoplay','0');
+        const iframe = el('iframe'); iframe.title = `${game.title} video player`; iframe.src = player.href; iframe.allow = 'fullscreen; picture-in-picture; encrypted-media'; iframe.allowFullscreen = true; iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        frame.append(iframe); iframe.focus();
+      } else {
+        const video = el('video'); video.controls = true; video.playsInline = true; video.preload = 'metadata'; video.setAttribute('aria-label',`${game.title} gameplay video`); if (poster) video.poster = poster;
+        if (config.captions) { const track = el('track'); track.kind='captions'; track.label='English'; track.srclang='en'; track.src=mediaURL(config.captions); video.append(track); }
+        video.addEventListener('error',()=>{ if (version !== mediaVersion) return; const error = el('div','video-error'); error.append(el('strong','','Video unavailable'),el('p','','The video could not be loaded. Please try again later.')); frame.replaceChildren(error); },{once:true});
+        frame.append(video); video.src = src; video.focus(); const playPromise = video.play(); if (playPromise) playPromise.catch(()=>{});
+      }
+    },{once:true});
+  }
+  function showGame(i, announce = true) {
+    if (i < 0 || i >= data.games.length) return;
+    current = i; selected = 0; const game = data.games[i];
+    $('game-title').textContent = game.title; $('game-subtitle').textContent = game.subtitle || game.description;
+    $('metadata').replaceChildren(...[game.engine,game.genre,game.status].filter(Boolean).map(t=>el('li','',t)));
+    $('game-number').textContent = number(i);
+    [...$('diamonds').children].forEach((b,j)=>{ b.setAttribute('aria-current',String(j === i)); });
+    $('previous-game').disabled = i === 0; $('next-game').disabled = i === data.games.length-1;
+    showVideo(game); showGallery(game);
+    if (announce) $('announcement').textContent = `${game.title}. Game ${i+1} of 3. ${game.subtitle}`;
+  }
+  $('previous-game').addEventListener('click',()=>showGame(current-1));
+  $('next-game').addEventListener('click',()=>showGame(current+1));
+  document.addEventListener('keydown',e=>{
+    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || !['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) return;
+    const target = e.target;
+    if (target.closest('video,iframe,input,textarea,select,[contenteditable],.video-frame,.thumbnails,.contact-links')) return;
+    e.preventDefault(); const delta = ['ArrowRight','ArrowDown'].includes(e.key)?1:-1; const next = Math.max(0,Math.min(2,current+delta));
+    if (next !== current) { showGame(next); if (target.closest('.game-index')) $('diamonds').children[next].focus(); }
+  });
+  showGame(0,false);
+})();
