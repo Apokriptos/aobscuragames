@@ -45,3 +45,40 @@ body[data-theme=dreadwoods] h1{font-family:Georgia,serif;font-weight:400;letter-
 .shell:after{mask-image:linear-gradient(to bottom,black 0%,black 30%,transparent 35%,transparent 57%,black 65%)}
 .project-pitch{position:relative}.pitch-copy{position:relative}
 @media(min-width:1101px){.project-logo img{max-width:70%}.gallery-body{gap:15px}.thumbnails{gap:11px}}
+/* Reference fidelity: layered manuscript edges, distinct ink, restrained controls. */
+.page-edges{position:fixed;inset:0 0 0 var(--side-width);background:var(--edges) center/100% 100% no-repeat;pointer-events:none;z-index:-1;opacity:.8}
+.shell:after{opacity:.48}
+.identity:before{background-image:var(--edges);background-size:100% 100%;opacity:.85}
+.sidebar-art{inset:33% 0 0;opacity:.95;mask-image:linear-gradient(transparent,black 20%,black 83%,transparent)}
+.sidebar-art img{filter:brightness(.86) saturate(.9)}
+.identity:after{background:linear-gradient(#000 0%,#000 20%,var(--side) 31%,transparent 48%,#050606db 100%)}
+.game-tab{font-family:Georgia,serif;font-weight:400;letter-spacing:.13em}
+.game-tab[aria-current=true]{color:var(--sidebar-accent);background:#080b0be8;box-shadow:inset 3px 0 var(--sidebar-accent),0 0 0 1px color-mix(in srgb,var(--sidebar-accent),transparent 65%)}
+body[data-theme=reditus] .game-tab[aria-current=true],body[data-theme=dreadwoods] .game-tab[aria-current=true]{color:#f0d5c0}
+body[data-theme=hollow] h1{font-family:Georgia,serif;font-weight:700;letter-spacing:-.045em}
+body[data-theme=reditus] h1{font-family:'Palatino Linotype','Book Antiqua',Palatino,serif;font-weight:400;letter-spacing:-.035em}
+body[data-theme=dreadwoods] h1{font-family:'Baskerville','Times New Roman',serif;font-weight:700;letter-spacing:.015em}
+#game-subtitle{font-family:Georgia,serif;font-weight:600;letter-spacing:.27em}
+.project-logo{position:relative}
+.project-logo img{height:100%;max-width:80%;mask-image:radial-gradient(ellipse,black 42%,transparent 72%)}
+.video-frame,.selected-image,.thumbnail{background:color-mix(in srgb,var(--media) 88%,#090d0d);outline-color:color-mix(in srgb,var(--accent) 52%,var(--line))}
+.video-frame:after{inset:6px;border-color:#d3dbc321}
+.video-frame:before{opacity:.07}
+.image-placeholder:before{opacity:.05}
+.media-corner,.image-marker{font-family:Georgia,serif;letter-spacing:.11em}
+.selected-image{outline-color:var(--accent)}
+.gallery h2{font-family:Georgia,serif;font-size:14px;letter-spacing:.13em}
+.metadata li{background:transparent;border-color:color-mix(in srgb,var(--line),var(--ink) 20%);font-family:Georgia,serif;font-size:14px}
+body[data-theme=dreadwoods] .shell:after{opacity:.22}
+body[data-theme=reditus] .shell:before{opacity:.85}
+body[data-theme=dreadwoods] .shell:before{opacity:.75}
+@media(min-width:1101px){
+ body[data-theme=hollow] h1{font-size:clamp(44px,4.25vw,82px)}
+ body[data-theme=reditus] h1{font-size:clamp(43px,4.15vw,80px)}
+ body[data-theme=dreadwoods] h1{font-size:clamp(46px,4.35vw,84px)}
+ .project-logo{height:198px}.project-pitch{gap:12px}
+ .pitch-copy p{font-family:Georgia,serif;font-size:clamp(16px,1.22vw,23px);line-height:1.42}
+ .pitch-copy #description-secondary{font-size:clamp(14px,1.06vw,20px);line-height:1.42}
+}
+@media(min-width:1101px) and (max-height:850px){body[data-theme] h1{font-size:clamp(37px,3.6vw,61px)}.project-logo{height:115px}.pitch-copy p{font-size:16px}.pitch-copy #description-secondary{font-size:14px}}
+@media(max-width:700px){.page-edges{opacity:.38}.sidebar-art{inset:0;opacity:.2}.metadata li{font-size:11px}#game-subtitle{letter-spacing:.16em}}

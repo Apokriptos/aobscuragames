@@ -27,3 +27,5 @@ Serve this directory with any static server. Example: `python -m http.server 417
 Keyboard: the three sidebar buttons switch games; gallery arrow keys move focus and Enter selects. Reduced-motion preferences are respected. Video loads on explicit interaction and stops when switching games.
 
 The right navigation rail has been removed from HTML, CSS and JavaScript. The two-column shell reserves no rail space. Global game-switching arrow handlers have been removed; standard Tab and Enter operate the left buttons.
+
+Visual refinement: separate edge-art SVGs for each theme, warmer fibrous parchment, stronger display typography and sidebar artwork. Decorative layers remain outside the media content and do not receive pointer input.
