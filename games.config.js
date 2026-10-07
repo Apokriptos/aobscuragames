@@ -29,7 +29,7 @@ window.PORTFOLIO = {
       ink:'#26221b', muted:'#716959', line:'#b5ac94', mediaBackground:'#252923',
       headingFont:"'Cormorant Garamond', Georgia, serif", bodyFont:"'DM Sans', Arial, sans-serif", pitchFont:"'Libre Baskerville', Georgia, serif",
       decorativeTexture:'assets/themes/parchment.svg', decorativeMotif:'assets/themes/dreadwoods-branches.svg?v=20261007d',
-      paperArtwork:'assets/themes/dreadwoods-paper.jpg', bindingArtwork:'assets/themes/dreadwoods-binding.jpg', outerArtwork:'assets/themes/dreadwoods-outer.jpg', edgeArtwork:'assets/themes/dreadwoods-edges.svg', sidebarArtwork:'assets/themes/dreadwoods-sidebar.jpg', borderStyle:'solid'
+      paperArtwork:'assets/themes/dreadwoods-paper-v2.jpg', bindingArtwork:'assets/themes/dreadwoods-binding.jpg', outerArtwork:'assets/themes/dreadwoods-outer.jpg', edgeArtwork:'assets/themes/dreadwoods-edges.svg', sidebarArtwork:'assets/themes/dreadwoods-sidebar.jpg', borderStyle:'solid'
     }
   },
   games:[
