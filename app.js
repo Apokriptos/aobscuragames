@@ -50,8 +50,6 @@
   data.games.forEach((game, i) => {
     const tab = el('button','game-tab',game.title); tab.type = 'button'; tab.setAttribute('aria-controls','game-panel');
     tab.addEventListener('click',()=>showGame(i)); $('game-tabs').append(tab);
-    const b = el('button','diamond-button'); b.type = 'button'; b.setAttribute('aria-label',`Show ${game.title}`); b.setAttribute('aria-controls','game-panel');
-    b.append(el('span','diamond-shape'),el('span','diamond-tooltip',game.title)); b.addEventListener('click',()=>showGame(i)); $('diamonds').append(b);
   });
   function placeholder(i, small = false) {
     const p = el('div','image-placeholder'); p.append(icon('image'),el('span','',small ? number(i) : 'Image forthcoming')); return p;
@@ -117,22 +115,10 @@
     if (i < 0 || i >= data.games.length) return;
     current = i; selected = 0; const game = data.games[i]; applyTheme(game);
     $('game-title').textContent = game.title; $('game-subtitle').textContent = game.subtitle || game.description;
-    $('metadata').replaceChildren(...[game.genre].filter(Boolean).map(t=>el('li','',t)));
-    $('game-number').textContent = number(i);
-    [...$('diamonds').children].forEach((b,j)=>{ b.setAttribute('aria-current',String(j === i)); });
+    $('metadata').replaceChildren(...[game.genre,game.status].filter(Boolean).map(t=>el('li','',t)));
     [...$('game-tabs').children].forEach((b,j)=>b.setAttribute('aria-current',String(j === i)));
-    $('previous-game').disabled = i === 0; $('next-game').disabled = i === data.games.length-1;
     showVideo(game); showGallery(game);
     if (announce) $('announcement').textContent = `${game.title}. Game ${i+1} of 3. ${game.subtitle}`;
   }
-  $('previous-game').addEventListener('click',()=>showGame(current-1));
-  $('next-game').addEventListener('click',()=>showGame(current+1));
-  document.addEventListener('keydown',e=>{
-    if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey || !['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) return;
-    const target = e.target;
-    if (target.closest('video,iframe,input,textarea,select,[contenteditable],.video-frame,.thumbnails,.contact-links')) return;
-    e.preventDefault(); const delta = ['ArrowRight','ArrowDown'].includes(e.key)?1:-1; const next = Math.max(0,Math.min(2,current+delta));
-    if (next !== current) { showGame(next); if (target.closest('.game-index')) $('diamonds').children[next].focus(); }
-  });
   showGame(0,false);
 })();

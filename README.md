@@ -16,12 +16,14 @@ Paths resolve relative to the site root and work under the GitHub Pages reposito
 
 ## Layout and art
 
-The sidebar, header, video/pitch row, gallery and index rail share the same DOM for all games. All video/image frames use `aspect-ratio: 16 / 9`; outlines do not alter frame dimensions. The desktop shell was checked at 1920x1080 and 1366x768. Below 1101px the pitch moves below the video; below 701px the sidebar becomes a compact header and the index rail becomes horizontal.
+The sidebar, header, video/pitch row, gallery  share the same DOM for all games. All video/image frames use `aspect-ratio: 16 / 9`; outlines do not alter frame dimensions. The desktop shell was checked at 1920x1080 and 1366x768. Below 1101px the pitch moves below the video; below 701px the sidebar becomes a compact header .
 
-Hollow uses cold paper and astral diagrams; Reditus uses parchment and ritual geometry; Dreadwoods uses bone paper and branches. SVG texture/motifs remain separate from real controls. The six small JPEG crops under `assets/themes` are temporary decorative sidebar artwork and project symbols extracted from the supplied references, not gameplay screenshots. Replace them when final assets are available. The Aobscura mark is temporary. No full reference screenshot is used as a page background.
+Hollow uses cold paper and astral diagrams; Reditus uses parchment and ritual geometry; Dreadwoods uses bone paper and branches. SVG texture/motifs remain separate from real controls. The six small JPEG crops under `assets/themes` are temporary decorative sidebar artwork and project symbols extracted from the supplied references, not gameplay screenshots. Replace them when final assets are available. The supplied Aobscura logo is used directly. No full reference screenshot is used as a page background.
 
 ## Run and publish
 
 Serve this directory with any static server. Example: `python -m http.server 4175 --directory outputs/eva-b2b` from the workspace root. Publish this directory's contents to the GitHub Pages root; `.nojekyll` is included. Existing legacy routes redirect to the showcase.
 
-Keyboard: sidebar buttons and diamonds switch games, rail arrows move previous/next, gallery arrow keys move focus and Enter selects. Reduced-motion preferences are respected. Video loads on explicit interaction and stops when switching games.
+Keyboard: the three sidebar buttons switch games; gallery arrow keys move focus and Enter selects. Reduced-motion preferences are respected. Video loads on explicit interaction and stops when switching games.
+
+The right navigation rail has been removed from HTML, CSS and JavaScript. The two-column shell reserves no rail space. Global game-switching arrow handlers have been removed; standard Tab and Enter operate the left buttons.

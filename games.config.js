@@ -5,7 +5,7 @@
 window.PORTFOLIO = {
   identity: {
     name:'Aobscura', descriptor:'EVA B2B · Current games',
-    logo:'assets/studio-mark.svg', logoAlt:'Aobscura — temporary studio wordmark',
+    logo:'assets/aobscura-logo.png', logoAlt:'Aobscura Games',
     email:'santiagolovsky@gmail.com', linkedin:'https://www.linkedin.com/in/santiago-perez-losanovscky-a91877172',
     instagram:'', website:'' // Optional external portfolio/studio URL; hidden when empty.
   },
@@ -14,21 +14,21 @@ window.PORTFOLIO = {
       accent:'#08696e', sidebarAccent:'#77d6d8', pageBackground:'#e7eceb', sidebarBackground:'#071216',
       ink:'#152124', muted:'#53656a', line:'#a6b4b5', mediaBackground:'#17262b',
       headingFont:"'Cormorant Garamond', Georgia, serif", bodyFont:"'DM Sans', Arial, sans-serif", pitchFont:"'Libre Baskerville', Georgia, serif",
-      decorativeTexture:'assets/themes/paper.svg', decorativeMotif:'assets/themes/hollow-diagram.svg',
+      decorativeTexture:'assets/themes/paper.svg?v=20261007c', decorativeMotif:'assets/themes/hollow-diagram.svg?v=20261007c',
       sidebarArtwork:'assets/themes/hollow-sidebar.jpg', borderStyle:'solid'
     },
     reditus: {
       accent:'#932a26', sidebarAccent:'#c94a3c', pageBackground:'#e9dfcb', sidebarBackground:'#180e0c',
       ink:'#241b17', muted:'#716457', line:'#b7a88b', mediaBackground:'#2b211d',
       headingFont:"'Cinzel', Georgia, serif", bodyFont:"'DM Sans', Arial, sans-serif", pitchFont:"'Libre Baskerville', Georgia, serif",
-      decorativeTexture:'assets/themes/paper.svg', decorativeMotif:'assets/themes/reditus-diagram.svg',
+      decorativeTexture:'assets/themes/paper.svg?v=20261007c', decorativeMotif:'assets/themes/reditus-diagram.svg?v=20261007c',
       sidebarArtwork:'assets/themes/reditus-sidebar.jpg', borderStyle:'solid'
     },
     dreadwoods: {
       accent:'#89342e', sidebarAccent:'#bb4c40', pageBackground:'#e8e0d1', sidebarBackground:'#14140f',
       ink:'#26221b', muted:'#716959', line:'#b5ac94', mediaBackground:'#252923',
       headingFont:"'Cormorant Garamond', Georgia, serif", bodyFont:"'DM Sans', Arial, sans-serif", pitchFont:"'Libre Baskerville', Georgia, serif",
-      decorativeTexture:'assets/themes/paper.svg', decorativeMotif:'assets/themes/dreadwoods-branches.svg',
+      decorativeTexture:'assets/themes/paper.svg?v=20261007c', decorativeMotif:'assets/themes/dreadwoods-branches.svg?v=20261007c',
       sidebarArtwork:'assets/themes/dreadwoods-sidebar.jpg', borderStyle:'solid'
     }
   },
