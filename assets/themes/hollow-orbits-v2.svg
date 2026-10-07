@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1080" fill="none" stroke="#426d75" stroke-width=".65">
+<!-- One upper orbital station, a quiet margin scale, one lower calibration station. -->
+<g transform="translate(1440 145)" opacity=".32"><circle r="94"/><circle r="68"/><ellipse rx="125" ry="32" transform="rotate(-32)"/><path d="M-112 0h224M0-112v224M-94-5v10m188-10v10M-5-94h10m-10 188h10"/><circle cx="68" r="2" fill="#426d75"/><circle cy="-68" r="1.5" fill="#426d75"/></g>
+<g opacity=".25"><path d="M1570 410v245m-5-225h10m-10 40h7m-7 40h10m-10 40h7m-7 40h10m-10 40h7"/></g>
+<g transform="translate(1470 986)" opacity=".28"><path d="M-73 0H73M0-60V60M-50-4v8m25-8v8m50-8v8m25-8v8"/><circle r="39"/><path d="M-39 0a39 39 0 0 1 39-39" stroke="#776287" stroke-width="1.1"/><circle r="8"/></g></svg>
