@@ -41,7 +41,7 @@
     document.body.dataset.theme = game.theme;
     const keys = {accent:'accent',sidebarAccent:'sidebar-accent',pageBackground:'paper',sidebarBackground:'side',ink:'ink',muted:'muted',line:'line',mediaBackground:'media',headingFont:'heading',bodyFont:'body',pitchFont:'pitch',borderStyle:'border-style'};
     for (const [key,css] of Object.entries(keys)) document.documentElement.style.setProperty(`--${css}`,theme[key]);
-    for (const [key,css] of [['decorativeTexture','texture'],['decorativeMotif','motif'],['edgeArtwork','edges']]) document.documentElement.style.setProperty(`--${css}`,`url("${mediaURL(theme[key])}")`);
+    for (const [key,css] of [['decorativeTexture','texture'],['decorativeMotif','motif'],['edgeArtwork','edges'],['paperArtwork','paper-art'],['bindingArtwork','binding-art'],['outerArtwork','outer-art']]) document.documentElement.style.setProperty(`--${css}`,`url("${mediaURL(theme[key])}")`);
     $('sidebar-art').src = mediaURL(theme.sidebarArtwork);
     logoInto($('project-logo'),game.logo,game.logoAlt,game.title);
     $('description-primary').textContent = game.descriptionPrimary;

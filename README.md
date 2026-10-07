@@ -29,3 +29,5 @@ Keyboard: the three sidebar buttons switch games; gallery arrow keys move focus 
 The right navigation rail has been removed from HTML, CSS and JavaScript. The two-column shell reserves no rail space. Global game-switching arrow handlers have been removed; standard Tab and Enter operate the left buttons.
 
 Visual refinement: separate edge-art SVGs for each theme, warmer fibrous parchment, stronger display typography and sidebar artwork. Decorative layers remain outside the media content and do not receive pointer input.
+
+Screen-fit pass: media dimensions are constrained by both viewport width and available height. All three themes were checked at 1920x1080, 1366x768, 993x892, 390x844 and 375x667 for full content visibility and 16:9 frame geometry. Nine small decorative crops supply binding edges, outer edges and paper grain from the supplied references; they contain no media frames or interface controls.
