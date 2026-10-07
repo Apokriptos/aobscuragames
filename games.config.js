@@ -1,10 +1,7 @@
-/* All meeting copy and media live here. Paths are relative to index.html.
-   Drop files into media/<game-id>/ and replace empty src values below.
-   File video: { type: 'file', src: 'media/hollow-graves/hero.mp4', poster: '...', captions: '...vtt' }
-   Embedded video: { type: 'embed', src: 'https://www.youtube-nocookie.com/embed/VIDEO_ID', poster: '...' }
-   Use a player/embed URL, not a regular watch/share page. Embeds load only after a click.
-   Empty src means an intentional placeholder. Broken files also fall back gracefully.
-   Up to four images are supported. Do not add games: this EVA edition has exactly three. */
+/* EVA B2B content + media map.
+   Human-editable copy and asset paths live here.
+   Drop final files into media/<game-id>/ and update src values below.
+   All video and gallery frames are rendered 16:9 by the site CSS. */
 window.PORTFOLIO = {
   identity: {
     name: 'Santiago Pérez Losanovscky',
@@ -12,43 +9,67 @@ window.PORTFOLIO = {
     email: 'santiagolovsky@gmail.com',
     linkedin: 'https://www.linkedin.com/in/santiago-perez-losanovscky-a91877172',
     instagram: '',
-    website: ''
+    website: 'https://apokriptos.github.io/santiago-portfolio/'
   },
   games: [
     {
-      id: 'hollow-graves', title: 'HOLLOW GRAVES',
-      subtitle: 'Systemic sci-fi / investigation horror.',
-      description: 'Systemic sci-fi / investigation horror.',
-      engine: 'Unreal Engine', genre: 'Investigation horror', status: '',
+      id: 'hollow-graves',
+      theme: 'hollow-graves',
+      title: 'HOLLOW GRAVES',
+      subtitle: 'SYSTEMIC SCI-FI INVESTIGATION HORROR.',
+      descriptionPrimary: 'An investigation-horror experience set across haunted systems, where forgotten worlds echo with an ancient astral corruption.',
+      descriptionSecondary: 'Uncover remnants of lost civilizations, descend into ritual spaces and confront entities beyond reality. Science, faith and the void intersect in the Hollow Graves.',
+      engine: 'Unreal Engine', genre: 'Sci-Fi Horror', status: 'In Development',
+      symbol: '◉',
+      themeArt: 'media/hollow-graves/theme.svg',
       video: { type: 'file', src: '', poster: '', captions: '', label: 'Gameplay video' },
       images: [
         { src: '', alt: 'Hollow Graves — representative image 01', caption: '' },
         { src: '', alt: 'Hollow Graves — representative image 02', caption: '' },
-        { src: '', alt: 'Hollow Graves — representative image 03', caption: '' }
+        { src: '', alt: 'Hollow Graves — representative image 03', caption: '' },
+        { src: '', alt: 'Hollow Graves — representative image 04', caption: '' },
+        { src: '', alt: 'Hollow Graves — representative image 05', caption: '' },
+        { src: '', alt: 'Hollow Graves — representative image 06', caption: '' }
       ]
     },
     {
-      id: 'reditus-umbrae', title: 'REDITUS UMBRAE',
-      subtitle: 'Dark action. Combat, animation and technical implementation.',
-      description: 'A dark action prototype focused on combat, animation and technical implementation.',
-      engine: '', genre: 'Dark action', status: 'Prototype',
+      id: 'reditus-umbrae',
+      theme: 'reditus-umbrae',
+      title: 'REDITUS UMBRAE',
+      subtitle: 'DARK ACTION COMBAT PROTOTYPE.',
+      descriptionPrimary: 'A dark action prototype set in an infernal realm, focused on visceral combat, technical animation and oppressive atmosphere.',
+      descriptionSecondary: 'Explore a medieval, Dantean world where penitence, violence and ruin intertwine. The presentation leans into parchment, ritual geometry and blood-red infernal accents.',
+      engine: 'Unreal Engine', genre: 'Action RPG', status: 'Prototype',
+      symbol: '†',
+      themeArt: 'media/reditus-umbrae/theme.svg',
       video: { type: 'file', src: '', poster: '', captions: '', label: 'Gameplay video' },
       images: [
         { src: '', alt: 'Reditus Umbrae — representative image 01', caption: '' },
         { src: '', alt: 'Reditus Umbrae — representative image 02', caption: '' },
-        { src: '', alt: 'Reditus Umbrae — representative image 03', caption: '' }
+        { src: '', alt: 'Reditus Umbrae — representative image 03', caption: '' },
+        { src: '', alt: 'Reditus Umbrae — representative image 04', caption: '' },
+        { src: '', alt: 'Reditus Umbrae — representative image 05', caption: '' },
+        { src: '', alt: 'Reditus Umbrae — representative image 06', caption: '' }
       ]
     },
     {
-      id: 'dreadwoods', title: 'DREADWOODS',
-      subtitle: 'Dark folkloric survival horror.',
-      description: 'Dark folkloric survival horror.',
-      engine: '', genre: 'Survival horror', status: '',
+      id: 'dreadwoods',
+      theme: 'dreadwoods',
+      title: 'DREADWOODS',
+      subtitle: 'DARK FOLKLORIC SURVIVAL HORROR.',
+      descriptionPrimary: 'A forgotten forest where ancient beliefs still breathe beneath the trees. Survive a land shaped by old rituals, hidden celebrations and local myths.',
+      descriptionSecondary: 'A dark folkloric survival horror rooted in rural superstition, hand-drawn ritual language and ominous natural forms.',
+      engine: 'Unreal Engine', genre: 'Survival Horror', status: 'In Development',
+      symbol: '♢',
+      themeArt: 'media/dreadwoods/theme.svg',
       video: { type: 'file', src: '', poster: '', captions: '', label: 'Gameplay video' },
       images: [
         { src: '', alt: 'Dreadwoods — representative image 01', caption: '' },
         { src: '', alt: 'Dreadwoods — representative image 02', caption: '' },
-        { src: '', alt: 'Dreadwoods — representative image 03', caption: '' }
+        { src: '', alt: 'Dreadwoods — representative image 03', caption: '' },
+        { src: '', alt: 'Dreadwoods — representative image 04', caption: '' },
+        { src: '', alt: 'Dreadwoods — representative image 05', caption: '' },
+        { src: '', alt: 'Dreadwoods — representative image 06', caption: '' }
       ]
     }
   ]
