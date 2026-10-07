@@ -1,35 +1,27 @@
-# EVA B2B — three-game microsite
+# EVA game showcase
 
-Plain HTML, CSS and JavaScript, reusing the portfolio's existing static stack and fonts. No packages, build tools, backend or routing. GitHub Pages serves the repository root on `main`.
+A static, shared three-game interface. No build step or dependencies required.
 
-## Edit content and media
+## Edit content
 
-Edit **games.config.js**. It contains the identity, optional contact links and exactly three games. Empty metadata and contact values are hidden. The full portfolio is intentionally absent from this EVA edition.
+Edit `games.config.js`. Each game has a title, subtitle, genre, two short pitch paragraphs, logo, video and six gallery images. The gallery displays one selected image and the five remaining thumbnails. Empty media paths show honest placeholders.
 
-For each game, place files in its folder:
+- Video file: set `video.type` to `file` and `video.src` to an MP4 path. Optional poster and WebVTT captions are supported.
+- Embedded player: set type to `embed` and supply the provider's embed URL.
+- Images: set each `src`, descriptive `alt`, and optional `caption`.
+- Studio mark/contact links: edit `identity`.
+- Palette, fonts, textures, motifs and sidebar artwork: edit the `themes` records.
 
-```
-media/hollow-graves/hero.mp4
-media/hollow-graves/image-01.jpg
-media/hollow-graves/image-02.jpg
-media/hollow-graves/image-03.jpg
-media/reditus-umbrae/...
-media/dreadwoods/...
-```
+Paths resolve relative to the site root and work under the GitHub Pages repository subpath. No secrets belong in this public config.
 
-Then set `video.src` and the image `src` values in the config. Video accepts MP4 or WebM with `type: 'file'`. `poster` is optional. `captions` accepts a WebVTT path. For YouTube/Vimeo or another video host, set `type: 'embed'` with its HTTPS **embed/player URL**, not a regular watch page. The iframe loads only after a click and requests no autoplay. Provider failures may display the provider's error message. Native-video failures and missing images show local fallbacks.
+## Layout and art
 
-No genuine game media was supplied. All default media values are empty, with intentional placeholders; nothing claims to be real gameplay. Add 2–4 images per game with meaningful `alt` text. Optional `caption` should be short. Metadata is limited to supplied facts; add engine/version and development status when verified.
+The sidebar, header, video/pitch row, gallery and index rail share the same DOM for all games. All video/image frames use `aspect-ratio: 16 / 9`; outlines do not alter frame dimensions. The desktop shell was checked at 1920x1080 and 1366x768. Below 1101px the pitch moves below the video; below 701px the sidebar becomes a compact header and the index rail becomes horizontal.
 
-## Interaction
+Hollow uses cold paper and astral diagrams; Reditus uses parchment and ritual geometry; Dreadwoods uses bone paper and branches. SVG texture/motifs remain separate from real controls. The six small JPEG crops under `assets/themes` are temporary decorative sidebar artwork and project symbols extracted from the supplied references, not gameplay screenshots. Replace them when final assets are available. The Aobscura mark is temporary. No full reference screenshot is used as a page background.
 
-- Three diamonds select games without navigating or scrolling the page. Previous/next stop at the ends.
-- Arrow keys switch games outside the video and gallery controls. Thumbnail arrow keys select images. Native player keys remain reserved for the player.
-- Switching games stops and removes the previous player. No audio autoplays on page load or game changes.
-- Desktop uses one viewport from 801px width and 580px height upward. Mobile, short windows and enlarged text can use the stacked layout. Media use contain fitting to avoid cropping evidence.
+## Run and publish
 
-## Run locally
+Serve this directory with any static server. Example: `python -m http.server 4175 --directory outputs/eva-b2b` from the workspace root. Publish this directory's contents to the GitHub Pages root; `.nojekyll` is included. Existing legacy routes redirect to the showcase.
 
-Serve this folder with a static web server, for example `python -m http.server 4175`. Open `http://localhost:4175`. Relative paths also support `/santiago-portfolio/` on GitHub Pages.
-
-The deployment includes redirect-only compatibility files for the old URLs. They return to this single screen; old case studies and Books content are not deployed. Git history preserves the previous portfolio.
+Keyboard: sidebar buttons and diamonds switch games, rail arrows move previous/next, gallery arrow keys move focus and Enter selects. Reduced-motion preferences are respected. Video loads on explicit interaction and stops when switching games.
