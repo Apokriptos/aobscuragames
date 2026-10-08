@@ -38,7 +38,7 @@ window.PORTFOLIO = {
       logo:'assets/themes/hollow-logo.png',logoAlt:'Hollow Graves astral skull emblem',
       descriptionPrimary:'An investigation-horror experience across haunted systems, where forgotten worlds echo with an ancient astral corruption.',
       descriptionSecondary:'Uncover remnants of lost civilizations, descend into ritual spaces and confront entities beyond reality. Science, faith and the void intertwine.',
-      video:{type:'file',src:'',poster:'',captions:'',label:'Gameplay video'},
+      video:{type:'file',src:'media/hollow-graves/HollowGravesShort.mp4',poster:'',captions:'',label:'Play gameplay reel'},
       images:Array.from({length:6},(_,i)=>({src:'',alt:`Hollow Graves — image ${i+1}`,caption:''}))
     },
     {
