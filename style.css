@@ -132,7 +132,7 @@ body[data-theme=hollow] .shell:before{opacity:.24}
 }
 @media(min-width:701px) and (max-height:800px){.game-heading{height:74px}:root{--gallery-height:min(calc((100vw - var(--side-width) - 2*var(--space))*.40*.5625),calc(100dvh - var(--row-height) - 165px))}body[data-theme] h1{font-size:clamp(28px,3.3vw,56px)}}
 /* Hollow only: coherent cold paper, deliberate orbital notation and crisp artwork. */
-body[data-theme=hollow]{--paper:#edf1ef}
+body[data-theme=hollow]{--paper:#171b1e}
 body[data-theme=hollow] .shell:before{background-image:url('assets/themes/hollow-paper-v2.svg');background-size:400px 400px;opacity:.55;mix-blend-mode:multiply}
 body[data-theme=hollow] .shell:after{background-image:url('assets/themes/hollow-orbits-v2.svg');background-size:100% 100%;opacity:1;mask-image:none}
 body[data-theme=hollow] .page-edges{display:none}
@@ -180,7 +180,7 @@ body[data-theme=dreadwoods] .game-tab[aria-current=true]{border-color:#bb4c40;ba
 body[data-theme=dreadwoods] #game-subtitle{font-weight:400}
 /* Supplied full-page materials replace the old tiled paper and ornament layers. */
 /* A light paper wash subdues ornament contrast without blurring supplied artwork. */
-body[data-theme=hollow]{--surface-wash:#edf1ef99;--muted:#48595e}
+body[data-theme=hollow]{--surface-wash:#090d104d;--paper:#171b1e;--ink:#f3f5f6;--muted:#d0d5d9;--accent:#dce3e7;--line:#77848b}
 body[data-theme=reditus]{--surface-wash:#eee3ce59;--muted:#5e5145}
 body[data-theme=dreadwoods]{--surface-wash:#ebe2d233;--muted:#5d5549}
 @media(min-width:701px){
@@ -192,7 +192,7 @@ body:is([data-theme=hollow],[data-theme=reditus],[data-theme=dreadwoods]) .shell
 body:is([data-theme=hollow],[data-theme=reditus],[data-theme=dreadwoods]) .page-edges{display:none}
 body:is([data-theme=hollow],[data-theme=reditus],[data-theme=dreadwoods]) .title-group,body:is([data-theme=hollow],[data-theme=reditus],[data-theme=dreadwoods]) .gallery h2{text-shadow:none}
 body:is([data-theme=hollow],[data-theme=reditus],[data-theme=dreadwoods]) .metadata li{background:color-mix(in srgb,var(--paper) 90%,transparent)}
-body[data-theme=hollow] .shell:before{background-image:linear-gradient(135deg,#edf1efed 0%,#edf1ef99 33%,#edf1ef55 100%),var(--paper-art)}
+body[data-theme=hollow] .shell:before{background-image:linear-gradient(#090d104d,#090d104d),var(--paper-art)}
 /* One cheap opacity curtain covers the entire main surface during tab swaps. */
 .game-curtain{position:fixed;inset:0 0 0 var(--side-width);z-index:20;background:#090d0f;opacity:0;pointer-events:none}
 .switching-game .game-curtain{pointer-events:auto}
