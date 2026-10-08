@@ -49,7 +49,7 @@
   }
   data.games.forEach((game, i) => {
     const tab = el('button','game-tab',game.title); tab.type = 'button'; tab.setAttribute('aria-controls','game-panel');
-    tab.addEventListener('click',()=>showGame(i)); $('game-tabs').append(tab);
+    tab.addEventListener('click',()=>switchGame(i)); $('game-tabs').append(tab);
   });
   function placeholder(i, small = false) {
     const p = el('div','image-placeholder'); p.append(icon('image'),el('span','',small ? number(i) : 'Image forthcoming')); return p;
@@ -110,6 +110,67 @@
         frame.append(video); video.src = src; video.focus(); const playPromise = video.play(); if (playPromise) playPromise.catch(()=>{});
       }
     },{once:true});
+  }
+  const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const curtain = el('div','game-curtain');
+  curtain.setAttribute('aria-hidden','true');
+  document.querySelector('.shell').append(curtain);
+  const preparedImages = new Map();
+  function prepareImage(src) {
+    const url = mediaURL(src);
+    if (!url) return Promise.resolve();
+    if (!preparedImages.has(url)) {
+      const img = new Image(); img.src = url;
+      const ready = new Promise(resolve => {
+        const timer = setTimeout(resolve,4000);
+        img.decode().catch(()=>{}).finally(()=>{ clearTimeout(timer); resolve(); });
+      });
+      preparedImages.set(url,ready);
+    }
+    return preparedImages.get(url);
+  }
+  function prepareGame(i) {
+    const game = data.games[i], theme = data.themes[game.theme];
+    return Promise.all([theme.sidebarArtwork,theme.paperArtwork,game.logo,game.video?.poster,...game.images.slice(0,6).map(image=>image.src)].map(prepareImage));
+  }
+  const nextPaint = () => new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+  async function fade(node,from,to,duration) {
+    const animation = node.animate([{opacity:from},{opacity:to}],{duration:reducedMotion.matches ? 0 : duration,easing:'ease-in-out',fill:'forwards'});
+    await animation.finished;
+    node.style.opacity = to;
+    animation.cancel();
+  }
+  let requestedGame = 0, switching = false;
+  async function switchGame(i) {
+    requestedGame = i;
+    if (switching || current === i) return;
+    if (reducedMotion.matches) { showGame(i); return; }
+    switching = true;
+    const panel = $('game-panel');
+    panel.inert = true; panel.setAttribute('aria-busy','true');
+    document.body.classList.add('switching-game');
+    try {
+      while (requestedGame !== current) {
+        const ready = prepareGame(requestedGame);
+        await Promise.all([fade(curtain,Number(curtain.style.opacity || 0),1,180),ready]);
+        // Coalesce fast clicks: only reveal the latest requested game.
+        let target;
+        do { target = requestedGame; await prepareGame(target); } while (target !== requestedGame);
+        const oldArt = $('sidebar-art').cloneNode();
+        oldArt.removeAttribute('id'); oldArt.className = 'sidebar-art-outgoing';
+        oldArt.style.objectPosition = getComputedStyle($('sidebar-art')).objectPosition;
+        $('sidebar-art').parentElement.append(oldArt);
+        showGame(target);
+        const artFade = fade(oldArt,1,0,360).finally(()=>oldArt.remove());
+        await nextPaint(); // Let decoded assets and gallery measurements settle under cover.
+        await Promise.all([fade(curtain,1,0,280),artFade]);
+      }
+    } finally {
+      curtain.style.opacity = 0;
+      panel.inert = false; panel.removeAttribute('aria-busy');
+      document.body.classList.remove('switching-game');
+      switching = false;
+    }
   }
   function showGame(i, announce = true) {
     if (i < 0 || i >= data.games.length) return;

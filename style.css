@@ -193,3 +193,9 @@ body:is([data-theme=hollow],[data-theme=reditus],[data-theme=dreadwoods]) .page-
 body:is([data-theme=hollow],[data-theme=reditus],[data-theme=dreadwoods]) .title-group,body:is([data-theme=hollow],[data-theme=reditus],[data-theme=dreadwoods]) .gallery h2{text-shadow:none}
 body:is([data-theme=hollow],[data-theme=reditus],[data-theme=dreadwoods]) .metadata li{background:color-mix(in srgb,var(--paper) 90%,transparent)}
 body[data-theme=hollow] .shell:before{background-image:linear-gradient(135deg,#edf1efed 0%,#edf1ef99 33%,#edf1ef55 100%),var(--paper-art)}
+/* One cheap opacity curtain covers the entire main surface during tab swaps. */
+.game-curtain{position:fixed;inset:0 0 0 var(--side-width);z-index:20;background:#090d0f;opacity:0;pointer-events:none}
+.switching-game .game-curtain{pointer-events:auto}
+.switching-game .game,.switching-game .game *{transition:none!important;animation:none!important}
+.sidebar-art .sidebar-art-outgoing{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+@media(max-width:700px){.game-curtain{inset:78px 0 0}}
