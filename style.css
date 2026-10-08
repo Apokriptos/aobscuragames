@@ -178,3 +178,9 @@ body[data-theme=dreadwoods] .video-frame:after{border-color:#b5ac9421;inset:5px}
 body[data-theme=dreadwoods] .game-tab:hover{border-color:#bb4c40;background:#241815}
 body[data-theme=dreadwoods] .game-tab[aria-current=true]{border-color:#bb4c40;background:#1d1510ed;color:#f1debd}
 body[data-theme=dreadwoods] #game-subtitle{font-weight:400}
+/* Supplied full-page materials replace the old tiled paper and ornament layers. */
+body:is([data-theme=reditus],[data-theme=dreadwoods]) .shell:before{background-image:var(--paper-art);background-size:cover;background-position:right center;background-repeat:no-repeat;opacity:1;mix-blend-mode:normal}
+body:is([data-theme=reditus],[data-theme=dreadwoods]) .shell:after{content:none}
+body:is([data-theme=reditus],[data-theme=dreadwoods]) .page-edges{display:none}
+body:is([data-theme=reditus],[data-theme=dreadwoods]) .title-group,body:is([data-theme=reditus],[data-theme=dreadwoods]) .gallery h2{text-shadow:0 0 6px var(--paper),0 0 14px var(--paper),0 0 24px var(--paper)}
+body:is([data-theme=reditus],[data-theme=dreadwoods]) .metadata li{background:color-mix(in srgb,var(--paper) 90%,transparent)}

@@ -22,14 +22,14 @@ window.PORTFOLIO = {
       ink:'#241b17', muted:'#716457', line:'#b7a88b', mediaBackground:'#2b211d',
       headingFont:"'Cinzel', Georgia, serif", bodyFont:"'DM Sans', Arial, sans-serif", pitchFont:"'Libre Baskerville', Georgia, serif",
       decorativeTexture:'assets/themes/parchment.svg', decorativeMotif:'assets/themes/reditus-diagram.svg?v=20261007d',
-      paperArtwork:'assets/themes/reditus-paper.jpg', bindingArtwork:'assets/themes/reditus-binding.jpg', outerArtwork:'assets/themes/reditus-outer.jpg', edgeArtwork:'assets/themes/reditus-edges.svg', sidebarArtwork:'assets/themes/reditus-sidebar-refined.jpg', borderStyle:'solid'
+      paperArtwork:'assets/themes/reditus-background.webp', bindingArtwork:'assets/themes/reditus-binding.jpg', outerArtwork:'assets/themes/reditus-outer.jpg', edgeArtwork:'assets/themes/reditus-edges.svg', sidebarArtwork:'assets/themes/reditus-sidebar-refined.jpg', borderStyle:'solid'
     },
     dreadwoods: {
       accent:'#89342e', sidebarAccent:'#bb4c40', pageBackground:'#ebe2d2', sidebarBackground:'#14140f',
       ink:'#26221b', muted:'#716959', line:'#b5ac94', mediaBackground:'#252923',
       headingFont:"'Cormorant Garamond', Georgia, serif", bodyFont:"'DM Sans', Arial, sans-serif", pitchFont:"'Libre Baskerville', Georgia, serif",
       decorativeTexture:'assets/themes/parchment.svg', decorativeMotif:'assets/themes/dreadwoods-branches.svg?v=20261007d',
-      paperArtwork:'assets/themes/dreadwoods-paper-v2.jpg', bindingArtwork:'assets/themes/dreadwoods-binding.jpg', outerArtwork:'assets/themes/dreadwoods-outer.jpg', edgeArtwork:'assets/themes/dreadwoods-edges.svg', sidebarArtwork:'assets/themes/dreadwoods-sidebar-clean.webp', borderStyle:'solid'
+      paperArtwork:'assets/themes/dreadwoods-background.webp', bindingArtwork:'assets/themes/dreadwoods-binding.jpg', outerArtwork:'assets/themes/dreadwoods-outer.jpg', edgeArtwork:'assets/themes/dreadwoods-edges.svg', sidebarArtwork:'assets/themes/dreadwoods-sidebar-clean.webp', borderStyle:'solid'
     }
   },
   games:[
