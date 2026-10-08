@@ -67,9 +67,7 @@
     const images = data.games[current].images.slice(0,6); if (!images.length) return;
     selected = i; imageInto($('selected-image'),images[i],i,false);
     if (!images[i].src) $('selected-image').append(el('span','image-marker',`${number(i)} / ${data.games[current].title}`));
-    const hadFocus = $('thumbnails').contains(document.activeElement);
-    [...$('thumbnails').children].forEach((b,j)=>{ b.hidden = j === i; b.setAttribute('aria-pressed',String(j === i)); });
-    if (hadFocus) [...$('thumbnails').children].find(b=>!b.hidden)?.focus();
+    [...$('thumbnails').children].forEach((b,j)=>{ b.setAttribute('aria-pressed',String(j === i)); });
     $('image-count').replaceChildren(el('strong','',number(i)),document.createTextNode(` / ${String(images.length).padStart(2,'0')}`));
     if (announce) $('announcement').textContent = `${data.games[current].title}, image ${i+1} of ${images.length}.`;
   }
@@ -79,7 +77,7 @@
     images.forEach((item, i) => {
       const b = el('button','thumbnail'); b.type = 'button'; b.setAttribute('aria-label',`Show image ${i+1} for ${game.title}`); b.setAttribute('aria-controls','selected-image'); b.setAttribute('aria-pressed','false');
       imageInto(b,item,i,true); b.addEventListener('click',()=>showImage(i,true));
-      b.addEventListener('keydown',e=>{ if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) return; e.preventDefault(); e.stopPropagation(); const visible = [...$('thumbnails').children].filter(b=>!b.hidden); const next = (visible.indexOf(b) + (['ArrowRight','ArrowDown'].includes(e.key)?1:-1) + visible.length)%visible.length; visible[next].focus(); });
+      b.addEventListener('keydown',e=>{ if (!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(e.key)) return; e.preventDefault(); e.stopPropagation(); const buttons = [...$('thumbnails').children]; const next = (buttons.indexOf(b) + (['ArrowRight','ArrowDown'].includes(e.key)?1:-1) + buttons.length)%buttons.length; buttons[next].focus(); });
       $('thumbnails').append(b);
     }); showImage(0);
   }
