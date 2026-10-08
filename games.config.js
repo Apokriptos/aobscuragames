@@ -42,10 +42,10 @@ window.PORTFOLIO = {
       images:Array.from({length:6},(_,i)=>({src:'',alt:`Hollow Graves — image ${i+1}`,caption:''}))
     },
     {
-      id:'reditus-umbrae',theme:'reditus',title:'REDITUS UMBRAE',subtitle:'Dark action combat prototype.',genre:'Action RPG',status:'',
+      id:'reditus-umbrae',theme:'reditus',title:'REDITUS UMBRAE',subtitle:'DARK FANTASY ROGUELITE',genre:'Action RPG',status:'',
       logo:'assets/themes/reditus-logo.png',logoAlt:'Reditus Umbrae flaming sword emblem',
-      descriptionPrimary:'A dark action prototype set in an infernal realm, focused on visceral combat, technical animation and oppressive atmosphere.',
-      descriptionSecondary:'Explore a world inspired by medieval mythology and the Dantean journey, where penitence and violence intertwine.',
+      descriptionPrimary:'A dark fantasy roguelite focused on visceral combat, physic-based mechanics, and relentless action.',
+      descriptionSecondary:'Cut your way through a nightmarish realm of eternal torment, find the architect of your cursed punishment, and pay for your sins.',
       video:{type:'file',src:'media/reditus-umbrae/REDITUSSHORT.mp4',poster:'media/reditus-umbrae/ScreenShot00001.png',captions:'',label:'Play gameplay reel'},
       images:[
         {src:'media/reditus-umbrae/ScreenShot00001.png',alt:'Reditus Umbrae — gameplay screenshot 1',caption:''},
