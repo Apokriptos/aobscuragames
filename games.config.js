@@ -46,8 +46,15 @@ window.PORTFOLIO = {
       logo:'assets/themes/reditus-logo.png',logoAlt:'Reditus Umbrae flaming sword emblem',
       descriptionPrimary:'A dark action prototype set in an infernal realm, focused on visceral combat, technical animation and oppressive atmosphere.',
       descriptionSecondary:'Explore a world inspired by medieval mythology and the Dantean journey, where penitence and violence intertwine.',
-      video:{type:'file',src:'',poster:'',captions:'',label:'Gameplay video'},
-      images:Array.from({length:6},(_,i)=>({src:'',alt:`Reditus Umbrae — image ${i+1}`,caption:''}))
+      video:{type:'file',src:'media/reditus-umbrae/REDITUSSHORT.mp4',poster:'media/reditus-umbrae/ScreenShot00001.png',captions:'',label:'Play gameplay reel'},
+      images:[
+        {src:'media/reditus-umbrae/ScreenShot00001.png',alt:'Reditus Umbrae — gameplay screenshot 1',caption:''},
+        {src:'media/reditus-umbrae/ScreenShot00002.png',alt:'Reditus Umbrae — gameplay screenshot 2',caption:''},
+        {src:'media/reditus-umbrae/ScreenShot00003.png',alt:'Reditus Umbrae — gameplay screenshot 3',caption:''},
+        {src:'media/reditus-umbrae/ScreenShot00004.png',alt:'Reditus Umbrae — gameplay screenshot 4',caption:''},
+        {src:'media/reditus-umbrae/ScreenShot00005.png',alt:'Reditus Umbrae — gameplay screenshot 5',caption:''},
+        {src:'media/reditus-umbrae/ScreenShot00006.png',alt:'Reditus Umbrae — gameplay screenshot 6',caption:''}
+      ]
     },
     {
       id:'dreadwoods',theme:'dreadwoods',title:'DREADWOODS',subtitle:'Dark folkloric survival horror.',genre:'Survival Horror',status:'',
