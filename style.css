@@ -148,3 +148,18 @@ body[data-theme=hollow] .video-frame:before,body[data-theme=hollow] .image-place
 body[data-theme=hollow] .video-frame:after{border-color:#88a4a21f;inset:5px}
 body[data-theme=hollow] .metadata li{border-color:#9eafb1;background:transparent}
 body[data-theme=hollow] #game-subtitle{font-weight:400;letter-spacing:.23em}
+/* Reditus: sharp cathedral art, restrained ember accents, unchanged paper surface. */
+body[data-theme=reditus] .identity{background:#080504}
+body[data-theme=reditus] .identity:before{background-image:none;border:0;border-right:1px solid #613329}
+body[data-theme=reditus] .sidebar-art{opacity:1;mask-image:linear-gradient(transparent 0%,black 13%,black 90%,transparent 100%)}
+body[data-theme=reditus] .sidebar-art img{filter:none;object-fit:cover;object-position:48% 50%}
+body[data-theme=reditus] .identity:after{background:linear-gradient(#080504 0%,#080504 25%,transparent 43%,transparent 81%,#080504 100%)}
+body[data-theme=reditus] .project-logo{justify-content:center;align-items:center;padding:0}
+body[data-theme=reditus] .project-logo img{height:100%;width:auto;max-width:100%;object-fit:contain;filter:none;transform:none}
+body[data-theme=reditus] .video-frame,body[data-theme=reditus] .thumbnail{outline:1px solid #9b8370}
+body[data-theme=reditus] .selected-image{outline:1px solid #932a26;outline-offset:1px}
+body[data-theme=reditus] .video-frame:before,body[data-theme=reditus] .image-placeholder:before{background-image:none}
+body[data-theme=reditus] .video-frame:after{border-color:#bc998421;inset:5px}
+body[data-theme=reditus] .game-tab:hover{border-color:#dc6550;background:#271310}
+body[data-theme=reditus] .game-tab[aria-current=true]{border-color:#c94a3c;background:#200e0bed;color:#ffe1ce}
+body[data-theme=reditus] #game-subtitle{font-weight:400}

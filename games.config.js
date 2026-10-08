@@ -5,7 +5,7 @@
 window.PORTFOLIO = {
   identity: {
     name:'Aobscura', descriptor:'EVA B2B · Current games',
-    logo:'assets/aobscura-logo.png', logoAlt:'Aobscura Games',
+    logo:'assets/aobscura-logo-transparent.png', logoAlt:'Aobscura Games',
     email:'santiagolovsky@gmail.com', linkedin:'https://www.linkedin.com/in/santiago-perez-losanovscky-a91877172',
     instagram:'', website:'' // Optional external portfolio/studio URL; hidden when empty.
   },
@@ -22,7 +22,7 @@ window.PORTFOLIO = {
       ink:'#241b17', muted:'#716457', line:'#b7a88b', mediaBackground:'#2b211d',
       headingFont:"'Cinzel', Georgia, serif", bodyFont:"'DM Sans', Arial, sans-serif", pitchFont:"'Libre Baskerville', Georgia, serif",
       decorativeTexture:'assets/themes/parchment.svg', decorativeMotif:'assets/themes/reditus-diagram.svg?v=20261007d',
-      paperArtwork:'assets/themes/reditus-paper.jpg', bindingArtwork:'assets/themes/reditus-binding.jpg', outerArtwork:'assets/themes/reditus-outer.jpg', edgeArtwork:'assets/themes/reditus-edges.svg', sidebarArtwork:'assets/themes/reditus-sidebar.jpg', borderStyle:'solid'
+      paperArtwork:'assets/themes/reditus-paper.jpg', bindingArtwork:'assets/themes/reditus-binding.jpg', outerArtwork:'assets/themes/reditus-outer.jpg', edgeArtwork:'assets/themes/reditus-edges.svg', sidebarArtwork:'assets/themes/reditus-sidebar-refined.jpg', borderStyle:'solid'
     },
     dreadwoods: {
       accent:'#89342e', sidebarAccent:'#bb4c40', pageBackground:'#ebe2d2', sidebarBackground:'#14140f',
