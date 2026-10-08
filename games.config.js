@@ -15,7 +15,7 @@ window.PORTFOLIO = {
       ink:'#152124', muted:'#53656a', line:'#a6b4b5', mediaBackground:'#17262b',
       headingFont:"'Cormorant Garamond', Georgia, serif", bodyFont:"'DM Sans', Arial, sans-serif", pitchFont:"'Libre Baskerville', Georgia, serif",
       decorativeTexture:'assets/themes/paper.svg?v=20261007d', decorativeMotif:'assets/themes/hollow-diagram.svg?v=20261007d',
-      paperArtwork:'assets/themes/hollow-paper.jpg', bindingArtwork:'assets/themes/hollow-binding.jpg', outerArtwork:'assets/themes/hollow-outer.jpg', edgeArtwork:'assets/themes/hollow-edges.svg', sidebarArtwork:'assets/themes/hollow-sidebar-restored.jpg', borderStyle:'solid'
+      paperArtwork:'assets/themes/hollow-background.webp', bindingArtwork:'assets/themes/hollow-binding.jpg', outerArtwork:'assets/themes/hollow-outer.jpg', edgeArtwork:'assets/themes/hollow-edges.svg', sidebarArtwork:'assets/themes/hollow-sidebar-restored.jpg', borderStyle:'solid'
     },
     reditus: {
       accent:'#932a26', sidebarAccent:'#c94a3c', pageBackground:'#eee3ce', sidebarBackground:'#180e0c',

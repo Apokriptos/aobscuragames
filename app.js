@@ -118,7 +118,33 @@
     $('metadata').replaceChildren(...[game.genre,game.status].filter(Boolean).map(t=>el('li','',t)));
     [...$('game-tabs').children].forEach((b,j)=>b.setAttribute('aria-current',String(j === i)));
     showVideo(game); showGallery(game);
+    requestGalleryFit();
     if (announce) $('announcement').textContent = `${game.title}. Game ${i+1} of 3. ${game.subtitle}`;
   }
+  // Fit from the gallery's actual position, including font metrics and browser zoom.
+  // Keep every frame 16:9 while reserving the main panel's bottom padding.
+  let galleryFitFrame;
+  function requestGalleryFit() {
+    cancelAnimationFrame(galleryFitFrame);
+    galleryFitFrame = requestAnimationFrame(() => {
+      const gallery = document.querySelector('.gallery-body');
+      const panel = $('game-panel');
+      if (!matchMedia('(min-width:701px)').matches) {
+        panel.style.removeProperty('--fitted-gallery-height');
+        return;
+      }
+      const bounds = gallery.getBoundingClientRect();
+      const bottomPadding = parseFloat(getComputedStyle(panel).paddingBottom);
+      const available = document.documentElement.clientHeight - bounds.top - bottomPadding - 3;
+      const height = Math.max(1, Math.min(bounds.width * .4 * 9 / 16, available));
+      panel.style.setProperty('--fitted-gallery-height', `${height}px`);
+    });
+  }
+  window.addEventListener('resize', requestGalleryFit);
+  const galleryFitObserver = new ResizeObserver(requestGalleryFit);
+  for (const selector of ['.game-heading', '.content-row', '.gallery-heading']) {
+    galleryFitObserver.observe(document.querySelector(selector));
+  }
+  document.fonts.ready.then(requestGalleryFit);
   showGame(0,false);
 })();
