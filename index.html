@@ -7,9 +7,11 @@
   <meta name="description" content="Three current games by Santiago Pérez Losanovscky. EVA B2B showcase: Hollow Graves, Reditus Umbrae and Dreadwoods.">
   <title>Current Games — Santiago Pérez Losanovscky</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2330312f'/%3E%3Cpath d='m16 6 10 10-10 10L6 16Z' fill='%23b33b34'/%3E%3C/svg%3E">
-  <link rel="stylesheet" href="./style.css?v=20261008j">
-  <script defer src="./games.config.js?v=20261008j"></script>
-  <script defer src="./app.js?v=20261008j"></script>
+  <link rel="stylesheet" href="./style.css?v=20261008k">
+  <script defer src="./games.config.js?v=20261008k"></script>
+  <link rel="stylesheet" href="./documents.css?v=20261008k">
+  <script defer src="./documents.js?v=20261008k"></script>
+  <script defer src="./app.js?v=20261008k"></script>
 </head>
 <body data-theme="hollow">
   <a class="skip" href="#game-title">Skip to game</a>
@@ -23,9 +25,27 @@
       <header class="game-heading"><div class="title-group"><h1 id="game-title" tabindex="-1"></h1><p id="game-subtitle"></p></div><ul class="metadata" id="metadata" aria-label="Game details"></ul></header>
       <div class="content-row"><section class="video-frame" id="video-frame" aria-label="Game video"></section><aside class="project-pitch" aria-label="About the game"><div class="project-logo" id="project-logo"></div><div class="pitch-copy"><div class="accent-divider" aria-hidden="true"></div><p id="description-primary"></p><p id="description-secondary"></p></div></aside></div>
       <section class="gallery" aria-label="Game images"><div class="gallery-heading"><h2>Images</h2><span id="image-count"></span></div><div class="gallery-body"><figure class="selected-image" id="selected-image"></figure><div class="thumbnails" id="thumbnails" role="group" aria-label="Choose an image"></div></div></section>
+      <section id="document-view" class="document-view" aria-label="Game document" hidden>
+        <div class="document-body">
+          <section class="pdf-stage" id="pdf-stage" aria-label="PDF page viewer" tabindex="0">
+            <div id="pdf-page" class="pdf-page"></div>
+            <p id="pdf-status" class="pdf-status" role="status"></p>
+            <button id="pdf-prev" class="pdf-arrow previous" aria-label="Previous page" disabled>‹</button>
+            <button id="pdf-next" class="pdf-arrow next" aria-label="Next page" disabled>›</button>
+          </section>
+          <aside class="document-info" aria-label="Document details">
+            <div id="document-logo" class="document-logo"></div>
+            <div class="document-rule"></div><h2 id="document-title"></h2><p id="document-description"></p>
+            <div class="document-actions"><span>PDF document</span><span id="pdf-total"></span><a id="pdf-open" target="_blank" rel="noopener noreferrer" hidden>↗ Open in new tab</a><a id="pdf-download" download hidden>↓ Download PDF</a></div>
+          </aside>
+        </div>
+        <section class="document-pages" aria-label="Document pages"><div class="document-pages-heading"><h2>Pages</h2><span id="pdf-count" role="status"></span></div><div id="pdf-thumbnails" class="pdf-thumbnails" role="group" aria-label="Choose a PDF page"></div></section>
+      </section>
     </main>
+    <nav id="material-tabs" class="material-rail" aria-label="Game materials"><h2>Game + Docs</h2></nav>
   </div>
   <p class="sr-only" id="announcement" role="status" aria-live="polite" aria-atomic="true"></p>
   <noscript><p class="noscript">Enable JavaScript to switch between Hollow Graves, Reditus Umbrae and Dreadwoods. Contact: santiagolovsky@gmail.com.</p></noscript>
 </body>
 </html>
+

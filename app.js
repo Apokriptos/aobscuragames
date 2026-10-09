@@ -16,7 +16,8 @@
     const paths = {image:'M3 4h18v16H3ZM3 16l5-5 4 4 3-3 6 5M16 8h.01',play:'m8 4 13 8L8 20Z',email:'M3 5h18v14H3ZM3 6l9 7 9-7',link:'M9 15l6-6M7 13l-2 2a3 3 0 0 0 4 4l4-4M11 9l4-4a3 3 0 0 1 4 4l-2 2'};
     const p = document.createElementNS(node.namespaceURI,'path'); p.setAttribute('d',paths[kind]); node.append(p); return node;
   };
-  let current = 0, selected = 0, mediaVersion = 0;
+  let current = 0, selected = 0, mediaVersion = 0, currentView = 'main';
+  const documentViewer = window.createDocumentViewer(root);
   const imageRequests = new WeakMap();
   $('identity-name').textContent = data.identity.name;
   $('identity-role').textContent = data.identity.descriptor;
@@ -138,17 +139,53 @@
     node.style.opacity = to;
     animation.cancel();
   }
-  let requestedGame = 0, switching = false;
+  let requestedGame = 0, requestedView = 'main', switching = false;
+  const materialNames = {main:'Main',pitch:'Pitch Deck',development:'Development Plan',roadmap:'Road Map'};
+  Object.entries(materialNames).forEach(([view,label]) => {
+    const b = el('button','material-tab'); b.type = 'button'; b.dataset.view = view;
+    b.setAttribute('aria-label',label); b.setAttribute('aria-controls','game-panel');
+    const badge = el('span','material-icon'); badge.append(icon(view === 'main' ? 'play' : 'image'));
+    // Document outline and gamepad, kept independent of decorative theme assets.
+    badge.querySelector('path').setAttribute('d',view === 'main' ? 'M7 7h10l3 3 2 8-3 2-4-4H9l-4 4-3-2 2-8ZM6 10v5M3.5 12.5h5M16 11h.01M18 14h.01' : 'M6 2h8l4 4v16H6ZM14 2v5h4M9 11h6M9 14h6M9 17h6');
+    b.append(badge,el('span','',label)); b.addEventListener('click',()=>switchMaterial(view));
+    $('material-tabs').append(b);
+  });
+  function selectMaterial(view) {
+    [...$('material-tabs').querySelectorAll('button')].forEach(b=>b.setAttribute('aria-current',String(b.dataset.view === view)));
+  }
+  function showView(view) {
+    currentView = view; $('game-panel').dataset.view = view;
+    const main = view === 'main';
+    document.querySelector('.content-row').hidden = !main;
+    document.querySelector('.gallery').hidden = !main;
+    $('document-view').hidden = main;
+    documentViewer.dispose();
+    if (main) requestGalleryFit();
+    else {
+      // Stop playback, including embedded players, before entering a document.
+      showVideo(data.games[current]);
+      documentViewer.open(data.games[current].documents?.[view],data.games[current]);
+    }
+  }
+  function switchMaterial(view) {
+    requestedView = view; selectMaterial(view); transitionToRequested();
+  }
   async function switchGame(i) {
-    requestedGame = i;
-    if (switching || current === i) return;
-    if (reducedMotion.matches) { showGame(i); return; }
+    requestedGame = i; requestedView = 'main'; selectMaterial('main');
+    return transitionToRequested();
+  }
+  async function transitionToRequested() {
+    if (switching || (current === requestedGame && currentView === requestedView)) return;
+    if (reducedMotion.matches) {
+      if (current !== requestedGame) showGame(requestedGame);
+      showView(requestedView); return;
+    }
     switching = true;
     const panel = $('game-panel');
     panel.inert = true; panel.setAttribute('aria-busy','true');
     document.body.classList.add('switching-game');
     try {
-      while (requestedGame !== current) {
+      while (requestedGame !== current || requestedView !== currentView) {
         const ready = prepareGame(requestedGame);
         await Promise.all([fade(curtain,Number(curtain.style.opacity || 0),1,180),ready]);
         // Coalesce fast clicks: only reveal the latest requested game.
@@ -158,7 +195,8 @@
         oldArt.removeAttribute('id'); oldArt.className = 'sidebar-art-outgoing';
         oldArt.style.objectPosition = getComputedStyle($('sidebar-art')).objectPosition;
         $('sidebar-art').parentElement.append(oldArt);
-        showGame(target);
+        if (current !== target) showGame(target);
+        showView(requestedView);
         const artFade = fade(oldArt,1,0,360).finally(()=>oldArt.remove());
         await nextPaint(); // Let decoded assets and gallery measurements settle under cover.
         await Promise.all([fade(curtain,1,0,280),artFade]);
@@ -176,6 +214,9 @@
     $('game-title').textContent = game.title; $('game-subtitle').textContent = game.subtitle || game.description;
     $('metadata').replaceChildren(...[game.genre,game.status].filter(Boolean).map(t=>el('li','',t)));
     [...$('game-tabs').children].forEach((b,j)=>b.setAttribute('aria-current',String(j === i)));
+    documentViewer.dispose(); currentView = 'main';
+    $('game-panel').dataset.view = 'main';
+    document.querySelector('.content-row').hidden = false; document.querySelector('.gallery').hidden = false; $('document-view').hidden = true;
     showVideo(game); showGallery(game);
     requestGalleryFit();
     if (announce) $('announcement').textContent = `${game.title}. Game ${i+1} of 3. ${game.subtitle}`;
@@ -205,5 +246,6 @@
     galleryFitObserver.observe(document.querySelector(selector));
   }
   document.fonts.ready.then(requestGalleryFit);
+  selectMaterial('main');
   showGame(0,false);
 })();

@@ -31,3 +31,25 @@ The right navigation rail has been removed from HTML, CSS and JavaScript. The tw
 Visual refinement: separate edge-art SVGs for each theme, warmer fibrous parchment, stronger display typography and sidebar artwork. Decorative layers remain outside the media content and do not receive pointer input.
 
 Screen-fit pass: media dimensions are constrained by both viewport width and available height. All three themes were checked at 1920x1080, 1366x768, 993x892, 390x844 and 375x667 for full content visibility and 16:9 frame geometry. Nine small decorative crops supply binding edges, outer edges and paper grain from the supplied references; they contain no media frames or interface controls.
+
+
+## Game documents
+The right rail selects Main, Pitch Deck, Development Plan, or Road Map for the active game.
+Game switching returns to Main. Document selection starts at page 1.
+
+Upload original PDFs to `media/<game-id>/docs/` using these filenames:
+- `pitch-deck.pdf`
+- `development-plan.pdf`
+- `roadmap.pdf`
+
+Game IDs: `hollow-graves`, `reditus-umbrae`, `dreadwoods`.
+Each game's `documents` config controls the title, description, and relative `src`.
+Optional `pageLabels` supplies thumbnail labels; otherwise only page numbers appear.
+Missing/failed documents show “Document forthcoming.” No conversion or build step is needed.
+
+`documents.js` lazily loads PDF.js 5.4.624 and its matching worker from jsDelivr.
+It contains pages at their original proportions, renders the selected page at capped device
+resolution, progressively renders small visible thumbnails, and cancels/releases stale work.
+The CDN must be reachable. Open/download actions point to the original PDF; same-origin files
+support direct download. Keyboard Left/Right changes pages in document views.
+On mobile the document body scrolls vertically so all metadata/actions remain accessible.

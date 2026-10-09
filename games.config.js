@@ -38,6 +38,11 @@ window.PORTFOLIO = {
       logo:'assets/themes/hollow-logo.png',logoAlt:'Hollow Graves astral skull emblem',
       descriptionPrimary:'An investigation-horror experience across haunted systems, where forgotten worlds echo with an ancient astral corruption.',
       descriptionSecondary:'Uncover remnants of lost civilizations, descend into ritual spaces and confront entities beyond reality. Science, faith and the void intertwine.',
+      documents: {
+        pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/hollow-graves/docs/pitch-deck.pdf', description:'A concise overview of Hollow Graves. Explore the vision, key features, world, and pillars.'},
+        development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/hollow-graves/docs/development-plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
+        roadmap: {title:'Road Map', label:'ROAD MAP', src:'media/hollow-graves/docs/roadmap.pdf', description:'Development milestones and progression toward the next production stage.'}
+      },
       video:{type:'file',src:'media/hollow-graves/HollowGravesShort.mp4',poster:'',captions:'',label:'Play gameplay reel'},
       images:Array.from({length:6},(_,i)=>({src:'',alt:`Hollow Graves — image ${i+1}`,caption:''}))
     },
@@ -46,6 +51,11 @@ window.PORTFOLIO = {
       logo:'assets/themes/reditus-logo.png',logoAlt:'Reditus Umbrae flaming sword emblem',
       descriptionPrimary:'A dark fantasy roguelite focused on visceral combat, physic-based mechanics, and relentless action.',
       descriptionSecondary:'Cut your way through a nightmarish realm of eternal torment, find the architect of your cursed punishment, and pay for your sins.',
+      documents: {
+        pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/reditus-umbrae/docs/pitch-deck.pdf', description:'A concise overview of Reditus Umbrae. Explore the vision, key features, world, and pillars.'},
+        development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/reditus-umbrae/docs/development-plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
+        roadmap: {title:'Road Map', label:'ROAD MAP', src:'media/reditus-umbrae/docs/roadmap.pdf', description:'Development milestones and progression toward the next production stage.'}
+      },
       video:{type:'file',src:'media/reditus-umbrae/REDITUSSHORT.mp4',poster:'media/reditus-umbrae/ScreenShot00001.png',captions:'',label:'Play gameplay reel'},
       images:[
         {src:'media/reditus-umbrae/ScreenShot00001.png',alt:'Reditus Umbrae — gameplay screenshot 1',caption:''},
@@ -61,6 +71,11 @@ window.PORTFOLIO = {
       logo:'assets/themes/dreadwoods-logo.png',logoAlt:'Dreadwoods wolf and thorn emblem',
       descriptionPrimary:'Venture into a forgotten forest where ancient beliefs linger and something hunts between the trees. Scavenge, survive and uncover the truth behind a hidden celebration.',
       descriptionSecondary:'A dark folkloric survival horror rooted in local myths and traditions, blending atmospheric exploration with tense encounters.',
+      documents: {
+        pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/dreadwoods/docs/pitch-deck.pdf', description:'A concise overview of Dreadwoods. Explore the vision, key features, world, and pillars.'},
+        development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/dreadwoods/docs/development-plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
+        roadmap: {title:'Road Map', label:'ROAD MAP', src:'media/dreadwoods/docs/roadmap.pdf', description:'Development milestones and progression toward the next production stage.'}
+      },
       video:{type:'file',src:'',poster:'',captions:'',label:'Gameplay video'},
       images:Array.from({length:6},(_,i)=>({src:'',alt:`Dreadwoods — image ${i+1}`,caption:''}))
     }
