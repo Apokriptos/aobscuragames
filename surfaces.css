@@ -51,3 +51,8 @@ body[data-theme=dreadwoods] {
     box-shadow: var(--surface-hover-shadow);
   }
 }
+
+/* Reditus Main: the secondary pitch sits over a dark illustrated background. */
+body[data-theme=reditus] #description-secondary {
+  color:#fff;
+}
