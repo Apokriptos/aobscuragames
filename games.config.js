@@ -79,9 +79,9 @@ window.PORTFOLIO = {
       descriptionPrimary:'Lost in a mysterious forest, you are hunted by a dark and terrible Beast. It is your fate to never see it out, yet, perhaps fate can be changed.',
       descriptionSecondary:'Explore the woods while dealing with its trickeries. Meet and gain the favor of its inhabitants. Find the Witch of the Dread.',
       documents: {
-        pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/dreadwoods/docs/pitch-deck.pdf', description:'A concise overview of Dreadwoods. Explore the vision, key features, world, and pillars.'},
-        development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/dreadwoods/docs/development-plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
-        roadmap: {title:'Road Map', label:'ROAD MAP', src:'media/dreadwoods/docs/roadmap.pdf', description:'Development milestones and progression toward the next production stage.'}
+        pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/dreadwoods/Dreadwoods — Pitch Deck.pdf', description:'A concise overview of Dreadwoods. Explore the vision, key features, world, and pillars.'},
+        development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/dreadwoods/Dreadwoods — Development Plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
+        roadmap: {title:'Road Map', label:'ROAD MAP', src:'media/dreadwoods/Dreadwoods — Roadmap.pdf', description:'Development milestones and progression toward the next production stage.'}
       },
       video:{type:'file',src:'',poster:'',captions:'',label:'Gameplay video'},
       images:Array.from({length:6},(_,i)=>({src:'',alt:`Dreadwoods — image ${i+1}`,caption:''}))
