@@ -56,3 +56,9 @@ body[data-theme=dreadwoods] {
 body[data-theme=reditus] #description-secondary {
   color:#e2e2e2;
 }
+
+/* Dreadwoods Main: keep both pitch paragraphs readable over the dark illustrated background. */
+body[data-theme=dreadwoods] #description-primary,
+body[data-theme=dreadwoods] #description-secondary {
+  color:#e2e2e2;
+}
