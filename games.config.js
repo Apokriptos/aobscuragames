@@ -34,10 +34,10 @@ window.PORTFOLIO = {
   },
   games:[
     {
-      id:'hollow-graves',theme:'hollow',title:'HOLLOW GRAVES',subtitle:'Systemic sci-fi investigation horror.',genre:'Sci-Fi Horror',status:'',
+      id:'hollow-graves',theme:'hollow',title:'HOLLOW GRAVES',subtitle:'Sci-fi investigation ghost horror.',genre:'Sci-Fi Horror',status:'',
       logo:'assets/themes/hollow-logo.png',logoAlt:'Hollow Graves astral skull emblem',
-      descriptionPrimary:'An investigation-horror experience across haunted systems, where forgotten worlds echo with an ancient astral corruption.',
-      descriptionSecondary:'Uncover remnants of lost civilizations, descend into ritual spaces and confront entities beyond reality. Science, faith and the void intertwine.',
+      descriptionPrimary:'Take the role of a Thaumaturge aboard the space station Belerofonte III — face tormented spirits and visitors of dark realities as you uncover the truth before all is lost.',
+      descriptionSecondary:'Make your way through the station as reality collapses into madness, facing an ever-evolving supernatural ecosystem determined to break you.',
       documents: {
         pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/hollow-graves/docs/pitch-deck.pdf', description:'A concise overview of Hollow Graves. Explore the vision, key features, world, and pillars.'},
         development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/hollow-graves/docs/development-plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
