@@ -56,7 +56,7 @@ window.PORTFOLIO = {
     {
       id:'reditus-umbrae',theme:'reditus',title:'REDITUS UMBRAE',subtitle:'DARK FANTASY ROGUELITE',genre:'Action RPG',status:'',
       logo:'assets/themes/reditus-logo.png',logoAlt:'Reditus Umbrae flaming sword emblem',
-      descriptionPrimary:'A dark fantasy roguelite focused on visceral combat, physic-based mechanics, and relentless action.',
+      descriptionPrimary:'A dark fantasy roguelite focused on visceral combat, physics-based mechanics, and relentless action.',
       descriptionSecondary:'Cut your way through a nightmarish realm of eternal torment, find the architect of your cursed punishment, and pay for your sins.',
       documents: {
         pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/reditus-umbrae/docs/pitch-deck.pdf', description:'A concise overview of Reditus Umbrae. Explore the vision, key features, world, and pillars.'},
