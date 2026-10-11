@@ -115,14 +115,16 @@
   curtain.setAttribute('aria-hidden','true');
   document.querySelector('.shell').append(curtain);
   const preparedImages = new Map();
-  function prepareImage(src) {
+  function prepareImage(src, timeoutMs = 12000) {
     const url = mediaURL(src);
     if (!url) return Promise.resolve();
     if (!preparedImages.has(url)) {
-      const img = new Image(); img.src = url;
+      const img = new Image();
+      img.src = url;
+      const decoded = img.decode().catch(()=>{});
       const ready = new Promise(resolve => {
-        const timer = setTimeout(resolve,4000);
-        img.decode().catch(()=>{}).finally(()=>{ clearTimeout(timer); resolve(); });
+        const timer = setTimeout(resolve,timeoutMs);
+        decoded.finally(()=>{ clearTimeout(timer); resolve(); });
       });
       preparedImages.set(url,ready);
     }
@@ -130,9 +132,31 @@
   }
   function prepareGame(i) {
     const game = data.games[i], theme = data.themes[game.theme];
-    return Promise.all([theme.sidebarArtwork,theme.paperArtwork,game.logo,game.video?.poster,...game.images.slice(0,6).map(image=>image.src)].map(prepareImage));
+    const backgroundAssets = [
+      theme.decorativeTexture,
+      theme.decorativeMotif,
+      theme.paperArtwork,
+      theme.bindingArtwork,
+      theme.outerArtwork,
+      theme.edgeArtwork,
+      theme.sidebarArtwork
+    ];
+    const mediaAssets = [game.video?.poster,...game.images.slice(0,6).map(image=>image.src)];
+    return Promise.all([
+      ...backgroundAssets.map(src=>prepareImage(src,20000)),
+      ...mediaAssets.map(src=>prepareImage(src,12000))
+    ]);
   }
   const nextPaint = () => new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+  const delay = ms => new Promise(resolve=>setTimeout(resolve,ms));
+  async function settleVisualPaint() {
+    // Decoding the file is not quite the same thing as the CSS background having been painted.
+    // Force style/layout application, then give the browser a few frames to rasterize large artwork.
+    void document.querySelector('.shell').offsetWidth;
+    await nextPaint();
+    await delay(120);
+    await nextPaint();
+  }
   async function fade(node,from,to,duration) {
     const animation = node.animate([{opacity:from},{opacity:to}],{duration:reducedMotion.matches ? 0 : duration,easing:'ease-in-out',fill:'forwards'});
     await animation.finished;
@@ -176,21 +200,20 @@
   }
   async function transitionToRequested() {
     if (switching || (current === requestedGame && currentView === requestedView)) return;
-    if (reducedMotion.matches) {
-      if (current !== requestedGame) showGame(requestedGame);
-      showView(requestedView); return;
-    }
     switching = true;
     const panel = $('game-panel');
     panel.inert = true; panel.setAttribute('aria-busy','true');
     document.body.classList.add('switching-game');
     try {
       while (requestedGame !== current || requestedView !== currentView) {
-        const ready = prepareGame(requestedGame);
-        await Promise.all([fade(curtain,Number(curtain.style.opacity || 0),1,180),ready]);
-        // Coalesce fast clicks: only reveal the latest requested game.
+        // Cover the current view completely before asking the destination artwork to load.
+        await fade(curtain,Number(curtain.style.opacity || 0),1,140);
+
+        // Coalesce fast clicks and do not reveal until the latest destination's background,
+        // video poster and gallery images have decoded (or hit a generous safety timeout).
         let target;
         do { target = requestedGame; await prepareGame(target); } while (target !== requestedGame);
+
         const oldArt = $('sidebar-art').cloneNode();
         oldArt.removeAttribute('id'); oldArt.className = 'sidebar-art-outgoing';
         oldArt.style.objectPosition = getComputedStyle($('sidebar-art')).objectPosition;
@@ -198,7 +221,9 @@
         if (current !== target) showGame(target);
         showView(requestedView);
         const artFade = fade(oldArt,1,0,360).finally(()=>oldArt.remove());
-        await nextPaint(); // Let decoded assets and gallery measurements settle under cover.
+
+        // Large theme images can be decoded yet still need a moment to reach the CSS paint layer.
+        await settleVisualPaint();
         await Promise.all([fade(curtain,1,0,280),artFade]);
       }
     } finally {
