@@ -59,9 +59,9 @@ window.PORTFOLIO = {
       descriptionPrimary:'A dark fantasy roguelite focused on visceral combat, physics-based mechanics, and relentless action.',
       descriptionSecondary:'Cut your way through a nightmarish realm of eternal torment, find the architect of your cursed punishment, and pay for your sins.',
       documents: {
-        pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/reditus-umbrae/docs/pitch-deck.pdf', description:'A concise overview of Reditus Umbrae. Explore the vision, key features, world, and pillars.'},
-        development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/reditus-umbrae/docs/development-plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
-        roadmap: {title:'Road Map', label:'ROAD MAP', src:'media/reditus-umbrae/docs/roadmap.pdf', description:'Development milestones and progression toward the next production stage.'}
+        pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/reditus-umbrae/Reditus Umbrae — Pitch Deck.pdf', description:'A concise overview of Reditus Umbrae. Explore the vision, key features, world, and pillars.'},
+        development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/reditus-umbrae/Reditus Umbrae — Development Plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
+        roadmap: {title:'Road Map', label:'ROAD MAP', src:'media/reditus-umbrae/Reditus Umbrae — Roadmap 2026-2027.pdf', description:'Development milestones and progression toward the next production stage.'}
       },
       video:{type:'file',src:'media/reditus-umbrae/REDITUSSHORT.mp4',poster:'media/reditus-umbrae/ScreenShot00001.png',captions:'',label:'Play gameplay reel'},
       images:[
