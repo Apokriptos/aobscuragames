@@ -43,7 +43,7 @@ window.PORTFOLIO = {
         development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/hollow-graves/docs/development-plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
         roadmap: {title:'Road Map', label:'ROAD MAP', src:'media/hollow-graves/docs/roadmap.pdf', description:'Development milestones and progression toward the next production stage.'}
       },
-      video:{type:'file',src:'media/hollow-graves/HollowGravesShort.mp4',poster:'',captions:'',label:'Play gameplay reel'},
+      video:{type:'file',src:'media/hollow-graves/HollowGravesShort.mp4',poster:'media/hollow-graves/MainPic.png',captions:'',label:'Play gameplay reel'},
       images:[
         {src:'media/hollow-graves/ScreenShot00000.png',alt:'Hollow Graves — gameplay screenshot 1',caption:''},
         {src:'media/hollow-graves/ScreenShot00001.png',alt:'Hollow Graves — gameplay screenshot 2',caption:''},
