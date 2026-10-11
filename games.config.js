@@ -74,10 +74,10 @@ window.PORTFOLIO = {
       ]
     },
     {
-      id:'dreadwoods',theme:'dreadwoods',title:'DREADWOODS',subtitle:'Dark folkloric survival horror.',genre:'Survival Horror',status:'',
+      id:'dreadwoods',theme:'dreadwoods',title:'DREADWOODS',subtitle:'Narrative-driven dark folkloric adventure.',genre:'Survival Horror',status:'',
       logo:'assets/themes/dreadwoods-logo.png',logoAlt:'Dreadwoods wolf and thorn emblem',
-      descriptionPrimary:'Venture into a forgotten forest where ancient beliefs linger and something hunts between the trees. Scavenge, survive and uncover the truth behind a hidden celebration.',
-      descriptionSecondary:'A dark folkloric survival horror rooted in local myths and traditions, blending atmospheric exploration with tense encounters.',
+      descriptionPrimary:'Lost in a mysterious forest, you are hunted by a dark and terrible Beast. It is your fate to never see it out, yet, perhaps fate can be changed.',
+      descriptionSecondary:'Explore the woods while dealing with its trickeries. Meet and gain the favor of its inhabitants. Find the Witch of the Dread.',
       documents: {
         pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/dreadwoods/docs/pitch-deck.pdf', description:'A concise overview of Dreadwoods. Explore the vision, key features, world, and pillars.'},
         development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/dreadwoods/docs/development-plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
