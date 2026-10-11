@@ -1,9 +1,48 @@
 /* Restrained mounted-surface depth. These tokens do not affect layout or backdrops. */
 /* Keep surface painting above the fixed paper layer, even after animation teardown. */
 .game { position:relative; z-index:0; isolation:isolate; }
-/* A fully transparent full-screen layer need not stay composited between switches. */
-.game-curtain { visibility:hidden; }
+
+/* Hide game/theme asset assembly behind a restrained loading veil.
+   The transition code already waits for the destination background, video poster and gallery imagery. */
+.game-curtain {
+  position:fixed;
+  z-index:20;
+  top:0;
+  bottom:0;
+  left:var(--side-width);
+  right:0;
+  display:grid;
+  place-items:center;
+  visibility:hidden;
+  opacity:0;
+  pointer-events:none;
+  background:#07090a;
+  color:#d9dddc;
+}
+.game-curtain::before {
+  content:'LOADING';
+  font:500 11px/1 var(--body);
+  letter-spacing:.28em;
+  text-indent:.28em;
+  opacity:.8;
+  animation:loading-pulse 1.15s ease-in-out infinite alternate;
+}
+.game-curtain::after {
+  content:'';
+  position:absolute;
+  width:42px;
+  height:1px;
+  left:50%;
+  top:calc(50% + 22px);
+  transform:translateX(-50%);
+  background:var(--accent);
+  opacity:.65;
+}
 .switching-game .game-curtain { visibility:visible; }
+@keyframes loading-pulse { from { opacity:.38; } to { opacity:.9; } }
+@media (prefers-reduced-motion: reduce) {
+  .game-curtain::before { animation:none; }
+}
 body[data-theme=hollow] {
   --surface-shadow: 0 3px 5px #0000008c, 0 10px 24px 3px #00000070;
   --surface-edge: 0 0 0 1px #9ccbd52e;
