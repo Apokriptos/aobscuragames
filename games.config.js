@@ -44,7 +44,14 @@ window.PORTFOLIO = {
         roadmap: {title:'Road Map', label:'ROAD MAP', src:'media/hollow-graves/docs/roadmap.pdf', description:'Development milestones and progression toward the next production stage.'}
       },
       video:{type:'file',src:'media/hollow-graves/HollowGravesShort.mp4',poster:'',captions:'',label:'Play gameplay reel'},
-      images:Array.from({length:6},(_,i)=>({src:'',alt:`Hollow Graves — image ${i+1}`,caption:''}))
+      images:[
+        {src:'media/hollow-graves/ScreenShot00000.png',alt:'Hollow Graves — gameplay screenshot 1',caption:''},
+        {src:'media/hollow-graves/ScreenShot00001.png',alt:'Hollow Graves — gameplay screenshot 2',caption:''},
+        {src:'media/hollow-graves/ScreenShot00002.png',alt:'Hollow Graves — gameplay screenshot 3',caption:''},
+        {src:'media/hollow-graves/ScreenShot00003.png',alt:'Hollow Graves — gameplay screenshot 4',caption:''},
+        {src:'media/hollow-graves/ScreenShot00005.png',alt:'Hollow Graves — gameplay screenshot 5',caption:''},
+        {src:'media/hollow-graves/ScreenShot00006.png',alt:'Hollow Graves — gameplay screenshot 6',caption:''}
+      ]
     },
     {
       id:'reditus-umbrae',theme:'reditus',title:'REDITUS UMBRAE',subtitle:'DARK FANTASY ROGUELITE',genre:'Action RPG',status:'',
