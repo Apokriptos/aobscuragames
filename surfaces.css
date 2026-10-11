@@ -54,5 +54,5 @@ body[data-theme=dreadwoods] {
 
 /* Reditus Main: the secondary pitch sits over a dark illustrated background. */
 body[data-theme=reditus] #description-secondary {
-  color:#fff;
+  color:#e2e2e2;
 }
