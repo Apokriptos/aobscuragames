@@ -96,9 +96,13 @@ body[data-theme=reditus] #description-secondary {
   color:#e2e2e2;
 }
 
-/* Dreadwoods Main: keep subtitle and pitch copy softly readable over the dark artwork. */
-body[data-theme=dreadwoods] #game-subtitle,
-body[data-theme=dreadwoods] #description-primary,
+/* Dreadwoods Main: dark editorial text over the lighter field-journal artwork. */
+body[data-theme=dreadwoods] #game-subtitle {
+  color:#34332f;
+}
+body[data-theme=dreadwoods] #description-primary {
+  color:#171715;
+}
 body[data-theme=dreadwoods] #description-secondary {
-  color:#e2e2e2;
+  color:#3f3d38;
 }
