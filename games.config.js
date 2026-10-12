@@ -83,8 +83,15 @@ window.PORTFOLIO = {
         development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/dreadwoods/Dreadwoods — Development Plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
         roadmap: {title:'Road Map', label:'ROAD MAP', src:'media/dreadwoods/Dreadwoods — Roadmap.pdf', description:'Development milestones and progression toward the next production stage.'}
       },
-      video:{type:'file',src:'',poster:'',captions:'',label:'Gameplay video'},
-      images:Array.from({length:6},(_,i)=>({src:'',alt:`Dreadwoods — image ${i+1}`,caption:''}))
+      video:{type:'file',src:'media/dreadwoods/Dreadwoodseva.mp4',poster:'media/dreadwoods/Captura de pantalla 2026-10-11 221729.png',captions:'',label:'Play gameplay reel'},
+      images:[
+        {src:'media/dreadwoods/ScreenShot00000.png',alt:'Dreadwoods — gameplay screenshot 1',caption:''},
+        {src:'media/dreadwoods/ScreenShot00001.png',alt:'Dreadwoods — gameplay screenshot 2',caption:''},
+        {src:'media/dreadwoods/ScreenShot00003.png',alt:'Dreadwoods — gameplay screenshot 3',caption:''},
+        {src:'media/dreadwoods/ScreenShot00004.png',alt:'Dreadwoods — gameplay screenshot 4',caption:''},
+        {src:'media/dreadwoods/ScreenShot00007.png',alt:'Dreadwoods — gameplay screenshot 5',caption:''},
+        {src:'media/dreadwoods/ScreenShot00011.png',alt:'Dreadwoods — gameplay screenshot 6',caption:''}
+      ]
     }
   ]
 };
