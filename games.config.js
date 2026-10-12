@@ -4,7 +4,7 @@
    Use embed/player URLs. Six gallery images by default. Decorative reference crops are NOT gameplay evidence. */
 window.PORTFOLIO = {
   identity: {
-    name:'Aobscura', descriptor:'EVA B2B · Current games',
+    name:'Aobscura', descriptor:'EVA B2B · Games',
     logo:'assets/aobscura-logo-transparent.png', logoAlt:'Aobscura Games',
     email:'santiagolovsky@gmail.com', linkedin:'https://www.linkedin.com/in/santiago-perez-losanovscky-a91877172',
     instagram:'', website:'' // Optional external portfolio/studio URL; hidden when empty.
