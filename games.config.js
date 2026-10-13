@@ -38,6 +38,10 @@ window.PORTFOLIO = {
       logo:'assets/themes/hollow-logo.png',logoAlt:'Hollow Graves astral skull emblem',
       descriptionPrimary:'Take the role of a Thaumaturge aboard the space station Belerofonte III — face tormented spirits and visitors of dark realities as you uncover the truth before all is lost.',
       descriptionSecondary:'Make your way through the station as reality collapses into madness, facing an ever-evolving supernatural ecosystem determined to break you.',
+      play: {
+        premise: ['Extended game synopsis pending.', 'This PLAY page is currently being prepared for the latest evaluation build.'],
+        build: {status:'Build information pending', note:'Download access will be added here.', platform:'', architecture:'', updated:'', version:'', poster:'', url:'', provider:''}
+      },
       documents: {
         pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/hollow-graves/docs/pitch-deck.pdf', description:'A concise overview of Hollow Graves. Explore the vision, key features, world, and pillars.'},
         development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/hollow-graves/docs/development-plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
@@ -58,6 +62,10 @@ window.PORTFOLIO = {
       logo:'assets/themes/reditus-logo.png',logoAlt:'Reditus Umbrae flaming sword emblem',
       descriptionPrimary:'A dark fantasy roguelite focused on visceral combat, physics-based mechanics, and relentless action.',
       descriptionSecondary:'Cut your way through a nightmarish realm of eternal torment, find the architect of your cursed punishment, and pay for your sins.',
+      play: {
+        premise: ['Extended game synopsis pending.', 'This PLAY page is currently being prepared for the latest evaluation build.'],
+        build: {status:'Build information pending', note:'Download access will be added here.', platform:'', architecture:'', updated:'', version:'', poster:'', url:'', provider:''}
+      },
       documents: {
         pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/reditus-umbrae/Reditus Umbrae — Pitch Deck.pdf', description:'A concise overview of Reditus Umbrae. Explore the vision, key features, world, and pillars.'},
         development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/reditus-umbrae/Reditus Umbrae — Development Plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
@@ -78,6 +86,10 @@ window.PORTFOLIO = {
       logo:'assets/themes/dreadwoods-logo.png',logoAlt:'Dreadwoods wolf and thorn emblem',
       descriptionPrimary:'Lost in a mysterious forest, you are hunted by a dark and terrible Beast. It is your fate to never see it out, yet, perhaps fate can be changed.',
       descriptionSecondary:'Explore the woods while dealing with its trickeries. Meet and gain the favor of its inhabitants. Find the Witch of the Dread.',
+      play: {
+        premise: ['Extended game synopsis pending.', 'This PLAY page is currently being prepared for the latest evaluation build.'],
+        build: {status:'Build information pending', note:'Download access will be added here.', platform:'', architecture:'', updated:'', version:'', poster:'', url:'', provider:''}
+      },
       documents: {
         pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/dreadwoods/Dreadwoods — Pitch Deck.pdf', description:'A concise overview of Dreadwoods. Explore the vision, key features, world, and pillars.'},
         development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/dreadwoods/Dreadwoods — Development Plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},

@@ -8,12 +8,14 @@
   <title>Games — Aobscura Games</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2330312f'/%3E%3Cpath d='m16 6 10 10-10 10L6 16Z' fill='%23b33b34'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="./style.css?v=20261008l">
-  <script defer src="./games.config.js?v=20261012a"></script>
+  <script defer src="./games.config.js?v=20261013a"></script>
   <link rel="stylesheet" href="./documents.css?v=20261008l">
   <link rel="stylesheet" href="./surfaces.css?v=20261011f">
   <link rel="stylesheet" href="./pdf-polish.css?v=20261009a">
   <script defer src="./documents.js?v=20261009a"></script>
-  <script defer src="./app.js?v=20261011m"></script>
+  <link rel="stylesheet" href="./play.css?v=20261013a">
+  <script defer src="./play.js?v=20261013a"></script>
+  <script defer src="./app.js?v=20261013a"></script>
 </head>
 <body data-theme="hollow">
   <a class="skip" href="#game-title">Skip to game</a>
@@ -27,6 +29,18 @@
       <header class="game-heading"><div class="title-group"><h1 id="game-title" tabindex="-1"></h1><p id="game-subtitle"></p></div><ul class="metadata" id="metadata" aria-label="Game details"></ul></header>
       <div class="content-row"><section class="video-frame" id="video-frame" aria-label="Game video"></section><aside class="project-pitch" aria-label="About the game"><div class="project-logo" id="project-logo"></div><div class="pitch-copy"><div class="accent-divider" aria-hidden="true"></div><p id="description-primary"></p><p id="description-secondary"></p></div></aside></div>
       <section class="gallery" aria-label="Game images"><div class="gallery-heading"><h2>Images</h2><span id="image-count"></span></div><div class="gallery-body"><figure class="selected-image" id="selected-image"></figure><div class="thumbnails" id="thumbnails" role="group" aria-label="Choose an image"></div></div></section>
+      <section id="play-view" class="play-view" aria-labelledby="play-title" hidden>
+        <div class="play-heading"><h2 id="play-title">Play</h2></div>
+        <div class="play-layout">
+          <article class="play-premise"><h3>The premise</h3><div id="play-premise-copy" class="play-premise-copy"></div></article>
+          <aside class="play-build" aria-labelledby="play-build-title">
+            <h3 id="play-build-title">Playable build</h3><p id="play-preparation" class="play-preparation">Under construction</p>
+            <div id="play-poster" class="play-poster" hidden></div>
+            <dl id="play-build-details" class="play-build-details"></dl><div id="play-build-actions"></div>
+            <p id="play-build-note" class="play-build-note"></p><p id="play-build-provider" class="play-build-provider" hidden></p>
+          </aside>
+        </div>
+      </section>
       <section id="document-view" class="document-view" aria-label="Game document" hidden>
         <div class="document-body">
           <section class="pdf-stage" id="pdf-stage" aria-label="PDF page viewer" tabindex="0">

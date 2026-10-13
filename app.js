@@ -164,13 +164,13 @@
     animation.cancel();
   }
   let requestedGame = 0, requestedView = 'main', switching = false;
-  const materialNames = {main:'Main',pitch:'Pitch Deck',development:'Development Plan',roadmap:'Road Map'};
+  const materialNames = {main:'Main',play:'Play',pitch:'Pitch Deck',development:'Development Plan',roadmap:'Road Map'};
   Object.entries(materialNames).forEach(([view,label]) => {
     const b = el('button','material-tab'); b.type = 'button'; b.dataset.view = view;
     b.setAttribute('aria-label',label); b.setAttribute('aria-controls','game-panel');
     const badge = el('span','material-icon'); badge.append(icon(view === 'main' ? 'play' : 'image'));
     // Document outline and gamepad, kept independent of decorative theme assets.
-    badge.querySelector('path').setAttribute('d',view === 'main' ? 'M7 7h10l3 3 2 8-3 2-4-4H9l-4 4-3-2 2-8ZM6 10v5M3.5 12.5h5M16 11h.01M18 14h.01' : 'M6 2h8l4 4v16H6ZM14 2v5h4M9 11h6M9 14h6M9 17h6');
+    badge.querySelector('path').setAttribute('d',view === 'main' ? 'M7 7h10l3 3 2 8-3 2-4-4H9l-4 4-3-2 2-8ZM6 10v5M3.5 12.5h5M16 11h.01M18 14h.01' : view === 'play' ? 'm8 4 13 8L8 20Z' : 'M6 2h8l4 4v16H6ZM14 2v5h4M9 11h6M9 14h6M9 17h6');
     b.append(badge,el('span','',label)); b.addEventListener('click',()=>switchMaterial(view));
     $('material-tabs').append(b);
   });
@@ -182,20 +182,22 @@
     const main = view === 'main';
     document.querySelector('.content-row').hidden = !main;
     document.querySelector('.gallery').hidden = !main;
-    $('document-view').hidden = main;
+    $('document-view').hidden = main || view === 'play';
+    $('play-view').hidden = view !== 'play';
     documentViewer.dispose();
     if (main) requestGalleryFit();
     else {
       // Stop playback, including embedded players, before entering a document.
       showVideo(data.games[current]);
-      documentViewer.open(data.games[current].documents?.[view],data.games[current]);
+      if (view === 'play') window.renderPlayView(data.games[current],root);
+      else documentViewer.open(data.games[current].documents?.[view],data.games[current]);
     }
   }
   function switchMaterial(view) {
     requestedView = view; selectMaterial(view); transitionToRequested();
   }
   async function switchGame(i) {
-    requestedGame = i; requestedView = 'main'; selectMaterial('main');
+    requestedGame = i; requestedView = requestedView === 'play' ? 'play' : 'main'; selectMaterial(requestedView);
     return transitionToRequested();
   }
   async function transitionToRequested() {
@@ -241,7 +243,7 @@
     [...$('game-tabs').children].forEach((b,j)=>b.setAttribute('aria-current',String(j === i)));
     documentViewer.dispose(); currentView = 'main';
     $('game-panel').dataset.view = 'main';
-    document.querySelector('.content-row').hidden = false; document.querySelector('.gallery').hidden = false; $('document-view').hidden = true;
+    document.querySelector('.content-row').hidden = false; document.querySelector('.gallery').hidden = false; $('document-view').hidden = true; $('play-view').hidden = true;
     showVideo(game); showGallery(game);
     requestGalleryFit();
     if (announce) $('announcement').textContent = `${game.title}. Game ${i+1} of 3. ${game.subtitle}`;
