@@ -43,6 +43,7 @@ window.renderPlayView = function (game, root) {
   }
   const actions = $('play-build-actions'); actions.replaceChildren();
   const url = safeURL(build.url);
+  $('play-build-legal').hidden = !url;
   if (url) {
     const link = node('a','play-build-button','Download build');
     link.href = url; link.target = '_blank'; link.rel = 'noopener noreferrer';
