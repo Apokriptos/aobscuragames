@@ -1,0 +1,28 @@
+/* Header tag expansion only. Keep the existing metadata component and site layout intact. */
+@media (min-width:1101px) {
+  .metadata {
+    max-width:44%;
+    align-content:flex-start;
+  }
+  .metadata li {
+    padding:6px 10px;
+    font-size:11px;
+    line-height:1.25;
+  }
+}
+
+@media (max-width:1100px) {
+  .metadata {
+    max-width:none;
+  }
+}
+
+@media (max-width:700px) {
+  .metadata {
+    gap:4px;
+  }
+  .metadata li {
+    padding:3px 6px;
+    font-size:9px;
+  }
+}
