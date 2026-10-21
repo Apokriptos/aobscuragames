@@ -40,7 +40,7 @@ window.PORTFOLIO = {
       descriptionSecondary:'Make your way through the station as reality collapses into madness, facing an ever-evolving supernatural ecosystem determined to break you.',
       play: {
         premise: ["The specialized space station Belerofonte III has fallen silent. Only a fragmented S.O.S. broadcast was received. A novice thaumaturge named Cástor is sent to investigate, under suspicion of supernatural causes.","Yet Belerofonte III has always been hermetic, and its silence hides many secrets. Cástor must combine technological and esoteric knowledge to make his way through the isolated station, piecing together the tragedy that befell it: the fate of its crew, the rise of a mysterious blood-soaked cult, and the terrible implications of the ghostly manifestations taking root at the heart of it all. It is a race against time. Secret after secret, horror after horror, he must uncover the truth before this new, hollow reality drowns the station in darkness."],
-        build: {status:'Build information pending', note:'Download access will be added here.', platform:'', architecture:'', updated:'', version:'', poster:'', url:'', provider:''}
+        build: {status:'Playable build available', note:'', platform:'', architecture:'', updated:'', version:'', poster:'', url:'https://drive.google.com/file/d/16a5fx6jZp_mfh7tM_XKza_Ro3E-bnU9-/view?usp=sharing', provider:'Google Drive'}
       },
       documents: {
         pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/hollow-graves/docs/pitch-deck.pdf', description:'A concise overview of Hollow Graves. Explore the vision, key features, world, and pillars.'},
