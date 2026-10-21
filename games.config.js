@@ -64,7 +64,7 @@ window.PORTFOLIO = {
       descriptionSecondary:'Cut your way through a nightmarish realm of eternal torment, find the architect of your cursed punishment, and pay for your sins.',
       play: {
         premise: ["Pain. Suffering. Sorrow. Torment. Blinded by duty, a nameless knight brought bloodshed and misery to a remote, foreign land, all in the name of faith. But the sins he committed seeped into the murky earth, and a curse was cast upon him.","Every time he wakes, it begins anew. The nightmare, all over again. He watches helplessly as the town burns, as the people wail, as everything crumbles. When darkness comes for his soul, he is cast once more into a shadowy land—a mockery of life, built from endless torment. Over and over he repeats the bloodshed, the horror, the agony; over and over he must fight his way toward the accursed witch who trapped him here."],
-        build: {status:'Build information pending', note:'Download access will be added here.', platform:'', architecture:'', updated:'', version:'', poster:'', url:'', provider:''}
+        build: {status:'Playable build available', note:'', platform:'', architecture:'', updated:'', version:'', poster:'', url:'https://drive.google.com/file/d/1Zc0uigVurvcOhfjpLCnYv9G74CkCa6Nv/view?usp=drive_link', provider:'Google Drive'}
       },
       documents: {
         pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/reditus-umbrae/Reditus Umbrae — Pitch Deck.pdf', description:'A concise overview of Reditus Umbrae. Explore the vision, key features, world, and pillars.'},
