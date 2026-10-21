@@ -15,7 +15,9 @@
   <script defer src="./documents.js?v=20261009a"></script>
   <link rel="stylesheet" href="./play.css?v=20261021a">
   <link rel="stylesheet" href="./tags.css?v=20261021a">
-  <script defer src="./play.js?v=20261018a"></script>
+  <script defer src="./play.js?v=20261021legal"></script>
+  <link rel="stylesheet" href="./legal.css?v=20261021a">
+  <script defer src="./legal.js?v=20261021a"></script>
   <script defer src="./app.js?v=20261013a"></script>
   <script defer src="./tags.js?v=20261021a"></script>
 </head>
@@ -40,6 +42,10 @@
             <div id="play-poster" class="play-poster" hidden></div>
             <dl id="play-build-details" class="play-build-details"></dl><div id="play-build-actions"></div>
             <p id="play-build-note" class="play-build-note"></p><p id="play-build-provider" class="play-build-provider" hidden></p>
+            <div id="play-build-legal" class="play-build-legal" hidden>
+              <p><strong>Evaluation build — not for redistribution.</strong></p>
+              <p>Provided solely for private evaluation. Redistribution, resale, public hosting or reuse of project materials without permission is prohibited.</p>
+            </div>
           </aside>
         </div>
       </section>
@@ -68,9 +74,22 @@
         </div>
         <section class="document-pages" aria-label="Document pages"><div class="document-pages-heading"><h2>Pages</h2><span id="pdf-count" role="status"></span></div><div id="pdf-thumbnails" class="pdf-thumbnails" role="group" aria-label="Choose a PDF page"></div></section>
       </section>
+      <footer class="site-legal-footer" aria-label="Copyright and legal information">
+        <span>© 2026 Aobscura Games and respective creators. All rights reserved.</span>
+        <a href="#legal-ip-notice" id="legal-ip-link" aria-haspopup="dialog" aria-controls="legal-ip-notice">Legal / IP Notice</a>
+      </footer>
     </main>
     <nav id="material-tabs" class="material-rail" aria-label="Game materials"><h2>Game + Docs</h2></nav>
   </div>
+  <dialog id="legal-ip-notice" class="legal-dialog" aria-labelledby="legal-ip-title">
+    <div class="legal-dialog-heading">
+      <h2 id="legal-ip-title">INTELLECTUAL PROPERTY NOTICE</h2>
+      <button type="button" id="legal-ip-close" aria-label="Close Legal / IP Notice" autofocus>×</button>
+    </div>
+    <p>© 2026 Aobscura Games and respective creators. All rights reserved.</p>
+    <p>Hollow Graves, Reditus Umbrae and Dreadwoods, including their original concepts, worlds, characters, writing, game design, code, artwork and audiovisual materials presented on this site, may not be reproduced, redistributed, modified or used commercially without authorization from the applicable rights holders.</p>
+    <p>Third-party and licensed materials, where applicable, remain the property of their respective owners.</p>
+  </dialog>
   <p class="sr-only" id="announcement" role="status" aria-live="polite" aria-atomic="true"></p>
   <noscript><p class="noscript">Enable JavaScript to switch between Hollow Graves, Reditus Umbrae and Dreadwoods. Contact: santiagolovsky@gmail.com.</p></noscript>
 </body>
