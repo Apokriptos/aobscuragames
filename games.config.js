@@ -39,7 +39,7 @@ window.PORTFOLIO = {
       descriptionPrimary:'Take the role of a Thaumaturge aboard the space station Belerofonte III — face tormented spirits and visitors of dark realities as you uncover the truth before all is lost.',
       descriptionSecondary:'Make your way through the station as reality collapses into madness, facing an ever-evolving supernatural ecosystem determined to break you.',
       play: {
-        premise: ['Extended game synopsis pending.', 'This PLAY page is currently being prepared for the latest evaluation build.'],
+        premise: ["The specialized space station Belerofonte III has fallen silent. Only a fragmented S.O.S. broadcast was received. A novice thaumaturge named Cástor is sent to investigate, under suspicion of supernatural causes.","Yet Belerofonte III has always been hermetic, and its silence hides many secrets. Cástor must combine technological and esoteric knowledge to make his way through the isolated station, piecing together the tragedy that befell it: the fate of its crew, the rise of a mysterious blood-soaked cult, and the terrible implications of the ghostly manifestations taking root at the heart of it all. It is a race against time. Secret after secret, horror after horror, he must uncover the truth before this new, hollow reality drowns the station in darkness."],
         build: {status:'Build information pending', note:'Download access will be added here.', platform:'', architecture:'', updated:'', version:'', poster:'', url:'', provider:''}
       },
       documents: {
@@ -63,7 +63,7 @@ window.PORTFOLIO = {
       descriptionPrimary:'A dark fantasy roguelite focused on visceral combat, physics-based mechanics, and relentless action.',
       descriptionSecondary:'Cut your way through a nightmarish realm of eternal torment, find the architect of your cursed punishment, and pay for your sins.',
       play: {
-        premise: ['Extended game synopsis pending.', 'This PLAY page is currently being prepared for the latest evaluation build.'],
+        premise: ["Pain. Suffering. Sorrow. Torment. Blinded by duty, a nameless knight brought bloodshed and misery to a remote, foreign land, all in the name of faith. But the sins he committed seeped into the murky earth, and a curse was cast upon him.","Every time he wakes, it begins anew. The nightmare, all over again. He watches helplessly as the town burns, as the people wail, as everything crumbles. When darkness comes for his soul, he is cast once more into a shadowy land—a mockery of life, built from endless torment. Over and over he repeats the bloodshed, the horror, the agony; over and over he must fight his way toward the accursed witch who trapped him here."],
         build: {status:'Build information pending', note:'Download access will be added here.', platform:'', architecture:'', updated:'', version:'', poster:'', url:'', provider:''}
       },
       documents: {
@@ -87,7 +87,7 @@ window.PORTFOLIO = {
       descriptionPrimary:'Lost in a mysterious forest, you are hunted by a dark and terrible Beast. It is your fate to never see it out, yet, perhaps fate can be changed.',
       descriptionSecondary:'Explore the woods while dealing with its trickeries. Meet and gain the favor of its inhabitants. Find the Witch of the Dread.',
       play: {
-        premise: ['Extended game synopsis pending.', 'This PLAY page is currently being prepared for the latest evaluation build.'],
+        premise: ["Amidst barbed vines and obscure blossoms, a dark, twisted shape lurks. Wide, hollow white eyes. Razor-sharp teeth. The terror of the Dreadwoods, its name spoken only as a horrid whisper: the Beast.","Perhaps by bad luck, perhaps by destiny, you wandered too far from the dirt path through the woods. You could swear the exit should be close, yet every step only takes you deeper. And as night begins to fall, a dreadful realisation settles in: you have been fated. The Beast hunts you tonight, and you will not live to see the light of day. Unless, that is, you receive the aid of a most mysterious individual..."],
         build: {status:'Build information pending', note:'Download access will be added here.', platform:'', architecture:'', updated:'', version:'', poster:'', url:'', provider:''}
       },
       documents: {
