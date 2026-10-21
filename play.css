@@ -163,3 +163,43 @@ body[data-theme=reditus] .play-premise,body[data-theme=dreadwoods] .play-premise
  .play-premise h3:after{margin:10px 0 17px}
  .play-premise-copy{line-height:1.55}
 }
+
+/* Reditus PLAY: oxblood surfaces; stains stay in the frame, copy stays clear. */
+body[data-theme=reditus] .play-view{--play-accent:#df8e82;--play-backing:#240e13}
+body[data-theme=reditus] .play-premise,
+body[data-theme=reditus] .play-build{
+ color:#ecdcc4;
+ border-color:#984a48;
+ background:
+  radial-gradient(ellipse at 0 0,#941f2b66,transparent 32%),
+  radial-gradient(ellipse at 100% 100%,#71102170,transparent 30%),
+  linear-gradient(125deg,#35121a,#1f0d11 58%,#2a0e15);
+ box-shadow:inset 0 0 30px #08020466,inset 0 1px #db7b6430,var(--surface-card-shadow);
+}
+body[data-theme=reditus] .play-premise:before,
+body[data-theme=reditus] .play-build:before{
+ border-color:#bd686047;
+ background:
+  radial-gradient(ellipse 5px 21px at 9px 10px,#971c30a6 55%,transparent 68%),
+  radial-gradient(ellipse 3px 12px at 20px 3px,#bc3d416b 55%,transparent 68%),
+  radial-gradient(circle 2px at 16px 40px,#bc3d4173 60%,transparent 70%),
+  radial-gradient(circle 2px at 5px 59px,#bc3d4166 60%,transparent 70%),
+  radial-gradient(ellipse 4px 17px at calc(100% - 10px) calc(100% - 13px),#9e203373 55%,transparent 68%),
+  radial-gradient(circle 2px at calc(100% - 20px) calc(100% - 39px),#bc3d416b 60%,transparent 70%);
+}
+body[data-theme=reditus] .play-premise h3{color:#f2d3ba}
+body[data-theme=reditus] .play-premise-copy{color:#ecdcc4;text-shadow:0 1px 1px #0003}
+body[data-theme=reditus] .play-build h3{color:#f1b2a0}
+body[data-theme=reditus] .play-build-row{border-bottom-color:#aa635c47}
+body[data-theme=reditus] .play-build-row dt{color:#c5a397}
+body[data-theme=reditus] .play-build-row dt svg{color:#ddbaac}
+body[data-theme=reditus] .play-build-row dd{color:#f0dfca}
+body[data-theme=reditus] .play-poster{border-color:#ad6359;outline-color:#a54c443d}
+body[data-theme=reditus] .play-build-button:not(:disabled){background:#8d2934;border-color:#c56863;color:#fff0db;box-shadow:inset 0 1px #f6c2a321}
+body[data-theme=reditus] .play-build-button:disabled{background:#47202a;border-color:#8f5556;color:#d3b9ac}
+body[data-theme=reditus] .play-preparation,
+body[data-theme=reditus] .play-build-note,
+body[data-theme=reditus] .play-build-provider,
+body[data-theme=reditus] .play-build-legal{color:#cdb5a7}
+body[data-theme=reditus] .play-build-legal{border-top-color:#b66c6359}
+body[data-theme=reditus] .play-build-legal strong{color:#f1b2a0}
