@@ -71,7 +71,7 @@ window.PORTFOLIO = {
         development: {title:'Development Plan', label:'DEVELOPMENT PLAN', src:'media/reditus-umbrae/Reditus Umbrae — Development Plan.pdf', description:'Development scope, production strategy, milestones and project needs.'},
         roadmap: {title:'Road Map', label:'ROAD MAP', src:'media/reditus-umbrae/Reditus Umbrae — Roadmap 2026-2027.pdf', description:'Development milestones and progression toward the next production stage.'}
       },
-      video:{type:'file',src:'media/reditus-umbrae/REDITUSSHORT.mp4',poster:'media/reditus-umbrae/ScreenShot00001.png',captions:'',label:'Play gameplay reel'},
+      video:{type:'file',src:'media/reditus-umbrae/Video Reditus 2.mp4',poster:'media/reditus-umbrae/ScreenShot00001.png',captions:'',label:'Play gameplay reel'},
       images:[
         {src:'media/reditus-umbrae/ScreenShot00001.png',alt:'Reditus Umbrae — gameplay screenshot 1',caption:''},
         {src:'media/reditus-umbrae/ScreenShot00002.png',alt:'Reditus Umbrae — gameplay screenshot 2',caption:''},
