@@ -7,7 +7,7 @@ window.PORTFOLIO = {
     name:'Aobscura', descriptor:'EVA B2B · Games',
     logo:'assets/aobscura-logo-transparent.png', logoAlt:'Aobscura Games',
     email:'santiagolovsky@gmail.com', linkedin:'https://www.linkedin.com/in/santiago-p%C3%A9rez-losanovscky-a91877172',
-    instagram:'', website:'' // Optional external portfolio/studio URL; hidden when empty.
+    instagram:'https://www.instagram.com/aobscuragames?srtk=MWNvYjd6dXM5aWhlNQ==', website:'' // Optional external portfolio/studio URL; hidden when empty.
   },
   themes: {
     hollow: {
