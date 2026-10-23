@@ -28,7 +28,11 @@
     dreadwoods.play = dreadwoods.play || {};
     dreadwoods.play.build = {
       ...(dreadwoods.play.build || {}),
-      poster: 'media/dreadwoods/DW_SS5.png'
+      status: 'Playable build available',
+      note: '',
+      poster: 'media/dreadwoods/DW_SS5.png',
+      url: 'https://drive.google.com/file/d/1yjH6Oi-ztkgb1dWLLasjnNVkFZPQVwDr/view?usp=sharing',
+      provider: 'Google Drive'
     };
 
     dreadwoods.images = [
