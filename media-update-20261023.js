@@ -11,8 +11,21 @@
     hollow.video.src = 'media/hollow-graves/Hollowgravesshowcasenew.mp4';
   }
 
-  if (reditus?.video) {
-    reditus.video.src = 'media/reditus-umbrae/Reditusumbraeshowcasenew.mp4';
+  if (reditus) {
+    reditus.video = {
+      ...(reditus.video || {}),
+      type: 'file',
+      src: 'media/reditus-umbrae/Reditusumbraeshowcasenew.mp4'
+    };
+
+    reditus.play = reditus.play || {};
+    reditus.play.build = {
+      ...(reditus.play.build || {}),
+      status: 'Playable build available',
+      note: '',
+      url: 'https://drive.google.com/file/d/1EtB-Z6w8Nwpd9d-qIh1hw7p0qjZmhkBP/view?usp=sharing',
+      provider: 'Google Drive'
+    };
   }
 
   if (dreadwoods) {
