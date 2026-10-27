@@ -202,3 +202,7 @@ body[data-theme=hollow] .shell:before{background-image:linear-gradient(#090d104d
 /* Transparent project emblems share the description column's left alignment. */
 body[data-theme] .project-logo{align-items:center;justify-content:flex-start;mix-blend-mode:normal;background:none;padding:0}
 body[data-theme] .project-logo img{mask-image:none;filter:none;mix-blend-mode:normal;object-fit:contain;object-position:left center;width:auto;height:100%;max-width:100%;transform:none}
+
+/* Shareable links retain the existing tab appearance. */
+a.game-tab,a.material-tab{text-decoration:none;cursor:pointer;text-align:center}
+a.material-tab{font-family:inherit}

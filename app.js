@@ -49,8 +49,8 @@
     $('description-secondary').textContent = game.descriptionSecondary;
   }
   data.games.forEach((game, i) => {
-    const tab = el('button','game-tab',game.title); tab.type = 'button'; tab.setAttribute('aria-controls','game-panel');
-    tab.addEventListener('click',()=>switchGame(i)); $('game-tabs').append(tab);
+    const tab = el('a','game-tab',game.title); tab.setAttribute('aria-controls','game-panel');
+    tab.addEventListener('click',event=>{ if (followInPlace(event)) { event.preventDefault(); switchGame(i); } }); $('game-tabs').append(tab);
   });
   function placeholder(i, small = false) {
     const p = el('div','image-placeholder'); p.append(icon('image'),el('span','',small ? number(i) : 'Image forthcoming')); return p;
@@ -166,16 +166,16 @@
   let requestedGame = 0, requestedView = 'main', switching = false;
   const materialNames = {main:'Main',play:'Play',pitch:'Pitch Deck',development:'Development Plan',roadmap:'Road Map'};
   Object.entries(materialNames).forEach(([view,label]) => {
-    const b = el('button','material-tab'); b.type = 'button'; b.dataset.view = view;
+    const b = el('a','material-tab'); b.dataset.view = view;
     b.setAttribute('aria-label',label); b.setAttribute('aria-controls','game-panel');
     const badge = el('span','material-icon'); badge.append(icon(view === 'main' ? 'play' : 'image'));
     // Document outline and gamepad, kept independent of decorative theme assets.
     badge.querySelector('path').setAttribute('d',view === 'main' ? 'M7 7h10l3 3 2 8-3 2-4-4H9l-4 4-3-2 2-8ZM6 10v5M3.5 12.5h5M16 11h.01M18 14h.01' : view === 'play' ? 'm8 4 13 8L8 20Z' : 'M6 2h8l4 4v16H6ZM14 2v5h4M9 11h6M9 14h6M9 17h6');
-    b.append(badge,el('span','',label)); b.addEventListener('click',()=>switchMaterial(view));
+    b.append(badge,el('span','',label)); b.addEventListener('click',event=>{ if (followInPlace(event)) { event.preventDefault(); switchMaterial(view); } });
     $('material-tabs').append(b);
   });
   function selectMaterial(view) {
-    [...$('material-tabs').querySelectorAll('button')].forEach(b=>b.setAttribute('aria-current',String(b.dataset.view === view)));
+    [...$('material-tabs').querySelectorAll('.material-tab')].forEach(b=>b.setAttribute('aria-current',String(b.dataset.view === view)));
   }
   function showView(view) {
     currentView = view; $('game-panel').dataset.view = view;
@@ -193,12 +193,50 @@
       else documentViewer.open(data.games[current].documents?.[view],data.games[current]);
     }
   }
+
+  // Route slugs are public URLs; values reuse the existing renderer's view IDs.
+  const routeViews = Object.freeze({main:'main',play:'play','pitch-deck':'pitch','development-plan':'development',roadmap:'roadmap'});
+  function parseRoute(hash) {
+    const match = /^#\/([^/]+)\/([^/]+)$/.exec(hash);
+    const game = match ? data.games.findIndex(item=>item.id === match[1]) : -1;
+    return {game:game < 0 ? 0 : game,view:game < 0 ? 'main' : (Object.hasOwn(routeViews,match[2]) ? routeViews[match[2]] : 'main')};
+  }
+  function routeFromState(game,view) {
+    const slug = Object.keys(routeViews).find(key=>routeViews[key] === view) || 'main';
+    return '#/' + data.games[game].id + '/' + slug;
+  }
+  function followInPlace(event) {
+    return event.button === 0 && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey;
+  }
+  function syncNavigation() {
+    [...$('game-tabs').children].forEach((link,i)=>{
+      link.href = routeFromState(i,requestedView === 'play' ? 'play' : 'main');
+    });
+    [...$('material-tabs').querySelectorAll('.material-tab')].forEach(link=>{
+      link.href = routeFromState(requestedGame,link.dataset.view);
+    });
+    selectMaterial(requestedView);
+  }
+  function setRoute(game,view) {
+    const hash = routeFromState(game,view);
+    if (location.hash !== hash) history.pushState(null,'',hash);
+    applyRoute();
+  }
+  function applyRoute(initial = false) {
+    const route = parseRoute(location.hash);
+    const canonical = routeFromState(route.game,route.view);
+    if (location.hash !== canonical) history.replaceState(null,'',canonical);
+    requestedGame = route.game; requestedView = route.view;
+    syncNavigation();
+    if (initial) { showGame(route.game,false); showView(route.view); }
+    else transitionToRequested();
+  }
+
   function switchMaterial(view) {
-    requestedView = view; selectMaterial(view); transitionToRequested();
+    setRoute(requestedGame,view);
   }
   async function switchGame(i) {
-    requestedGame = i; requestedView = requestedView === 'play' ? 'play' : 'main'; selectMaterial(requestedView);
-    return transitionToRequested();
+    setRoute(i,requestedView === 'play' ? 'play' : 'main');
   }
   async function transitionToRequested() {
     if (switching || (current === requestedGame && currentView === requestedView)) return;
@@ -273,6 +311,10 @@
     galleryFitObserver.observe(document.querySelector(selector));
   }
   document.fonts.ready.then(requestGalleryFit);
-  selectMaterial('main');
-  showGame(0,false);
+  window.addEventListener('hashchange',()=>applyRoute());
+  window.addEventListener('popstate',()=>applyRoute());
+  document.querySelector('.skip').addEventListener('click',event=>{
+    event.preventDefault(); $('game-title').focus();
+  });
+  applyRoute(true);
 })();
