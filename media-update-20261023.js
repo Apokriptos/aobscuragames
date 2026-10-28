@@ -32,7 +32,7 @@
     dreadwoods.video = {
       ...(dreadwoods.video || {}),
       type: 'file',
-      src: 'media/dreadwoods/Dreadwoods - Video - Final.mp4',
+      src: 'media/dreadwoods/Dreadwoodsshowcasenew.mp4',
       poster: 'media/dreadwoods/DW_SS20.png',
       captions: '',
       label: 'Play gameplay reel'
