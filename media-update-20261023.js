@@ -23,7 +23,7 @@
       ...(reditus.play.build || {}),
       status: 'Playable build available',
       note: '',
-      url: 'https://drive.google.com/drive/folders/1db4vGlSh1NJghHg6os328QoY0oEfYDyK?usp=sharing',
+      url: 'https://drive.google.com/file/d/1_UYD5eR2b1jpcxyCR79imIGds16KEqEe/view?usp=sharing',
       provider: 'Google Drive'
     };
   }
