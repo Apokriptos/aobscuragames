@@ -88,7 +88,7 @@ window.PORTFOLIO = {
       descriptionSecondary:'Explore the woods while dealing with its trickeries. Meet and gain the favor of its inhabitants. Find the Witch of the Dread.',
       play: {
         premise: ["Amidst barbed vines and obscure blossoms, a dark, twisted shape lurks. Wide, hollow white eyes. Razor-sharp teeth. The terror of the Dreadwoods, its name spoken only as a horrid whisper: the Beast.","Perhaps by bad luck, perhaps by destiny, you wandered too far from the dirt path through the woods. You could swear the exit should be close, yet every step only takes you deeper. And as night begins to fall, a dreadful realisation settles in: you have been fated. The Beast hunts you tonight, and you will not live to see the light of day. Unless, that is, you receive the aid of a most mysterious individual..."],
-        build: {status:'Build information pending', note:'Download access will be added here.', platform:'', architecture:'', updated:'', version:'', poster:'', url:'', provider:''}
+        build: {status:'Playable build available', note:'', platform:'', architecture:'', updated:'', version:'', poster:'', url:'https://drive.google.com/file/d/1oAXB5q97hkTDKdetP_kjIACCWoR4fPdv/view?usp=sharing', provider:'Google Drive'}
       },
       documents: {
         pitch: {title:'Pitch Deck', label:'PITCH DECK', src:'media/dreadwoods/Dreadwoods — Pitch Deck.pdf', description:'A concise overview of Dreadwoods. Explore the vision, key features, world, and pillars.'},
